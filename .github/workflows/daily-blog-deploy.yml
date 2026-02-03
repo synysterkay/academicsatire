@@ -1,0 +1,353 @@
+# Prof Y Not - Automated Blog Generation & Deployment
+# This workflow generates daily blog posts using DeepSeek API and deploys to GitHub Pages
+
+name: Daily Blog Generation & Deploy
+
+on:
+  # Run 10 times daily at different times (UTC)
+  schedule:
+    - cron: '0 2 * * *'   # 2:00 AM UTC
+    - cron: '30 5 * * *'  # 5:30 AM UTC
+    - cron: '0 8 * * *'   # 8:00 AM UTC
+    - cron: '45 10 * * *' # 10:45 AM UTC
+    - cron: '15 12 * * *' # 12:15 PM UTC
+    - cron: '30 14 * * *' # 2:30 PM UTC
+    - cron: '0 16 * * *'  # 4:00 PM UTC
+    - cron: '45 18 * * *' # 6:45 PM UTC
+    - cron: '15 20 * * *' # 8:15 PM UTC
+    - cron: '30 22 * * *' # 10:30 PM UTC
+  
+  # Allow manual trigger
+  workflow_dispatch:
+    inputs:
+      topic_override:
+        description: 'Optional: Specific topic to write about'
+        required: false
+        type: string
+      skip_deploy:
+        description: 'Skip deployment (content generation only)'
+        required: false
+        type: boolean
+        default: false
+
+  # Deploy on push to main
+  push:
+    branches:
+      - main
+
+# Sets permissions for GITHUB_TOKEN for GitHub Pages deployment
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+env:
+  HUGO_VERSION: 0.124.0
+
+jobs:
+  # Job 1: Generate Blog Content
+  generate-content:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    outputs:
+      new_post_created: ${{ steps.create_post.outputs.created }}
+      post_filename: ${{ steps.create_post.outputs.filename }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install axios
+
+      - name: Generate blog post with DeepSeek
+        id: create_post
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          TOPIC_OVERRIDE: ${{ github.event.inputs.topic_override }}
+        run: |
+          node << 'EOF'
+          const axios = require('axios');
+          const fs = require('fs');
+          const path = require('path');
+
+          // Blog topics pool for variety
+          const books = [
+            { title: "How To Be Late Even When You Start Early", slug: "how-to-be-late-even-when-you-start-early", topic: "Time Blindness & Lateness" },
+            { title: "How To Be Exhausted By Decisions That Don't Matter", slug: "how-to-be-exhausted-by-decisions-that-dont-matter", topic: "Decision Fatigue" },
+            { title: "How To Achieve Burnout Without Achieving Anything", slug: "how-to-achieve-burnout-without-achieving-anything", topic: "Burnout Culture" },
+            { title: "Why Everyone Is Wrong Except Me: A Scientific Study", slug: "why-everyone-is-wrong-except-me", topic: "Ego & Being Right" },
+            { title: "Why Success Feels Illegal To Me", slug: "why-success-feels-illegal-to-me", topic: "Imposter Syndrome" },
+            { title: "Why Do I Hate Everyone Before Coffee", slug: "why-do-i-hate-everyone-before-coffee", topic: "Morning Rage" },
+            { title: "I Promise I’ll Start Tomorrow", slug: "i-promise-ill-start-tomorrow", topic: "Procrastination" },
+            { title: "Why Am I Tired After Doing Nothing All Day", slug: "why-am-i-tired-after-doing-nothing-all-day", topic: "Modern Boredom" },
+            { title: "I'm Not Lazy I'm On Energy Saving Mode", slug: "im-not-lazy-im-on-energy-saving-mode", topic: "Productivity Myths" },
+            { title: "I Have No Idea What I am Doing But It's Working", slug: "i-have-no-idea-what-i-am-doing-but-its-working", topic: "Faking Success" },
+            { title: "How To Ruin Your Life With One Bad Decision", slug: "how-to-ruin-your-life-with-one-bad-decision", topic: "Regret & Mistakes" },
+            { title: "How To Be Productive Without Producing Anything", slug: "how-to-be-productive-without-producing-anything", topic: "Corporate Nonsense" },
+            { title: "How To Be Broke With Confidence", slug: "how-to-be-broke-with-confidence", topic: "Financial Satire" },
+            { title: "How To Politely Tell Someone That You Don't Like Them", slug: "how-to-politely-tell-someone-that-you-dont-like-them", topic: "Social Etiquette" },
+            { title: "How Can You Face Your Problem When the Problem Is Your Face", slug: "how-can-you-face-your-problem-when-the-problem-is-your-face", topic: "Self Image" },
+            { title: "How Can I Double My Body Fat And Give It To The Next Person", slug: "how-can-i-double-my-body-fat-and-give-it-to-the-next-person", topic: "Fitness Satire" },
+            { title: "How To Hold In Your Fart When Talking To Your Crush", slug: "how-to-hold-in-your-fart-when-talking-to-your-crush", topic: "Dating Disasters" },
+            { title: "How To Fart And Blame It On Someone", slug: "how-to-fart-and-blame-it-on-someone", topic: "Social Survival" },
+            { title: "Prof or not, here I come!", slug: "prof-or-not-here-i-come", topic: "Academic Satire" }
+          ];
+
+          const topics = [
+            { category: "Satire Writing", topics: [
+              "How to write satire without getting fired",
+              "The fine line between humor and offense in satirical writing",
+              "Famous satirists and what we can learn from them",
+              "Turning everyday absurdities into comedy gold",
+              "The art of the deadpan delivery in written humor"
+            ]},
+            { category: "Academic Humor", topics: [
+              "Why faculty meetings are universal comedy material",
+              "The unwritten rules of academic email etiquette",
+              "Decoding academic jargon: A satirist's guide",
+              "The eternal struggle of the adjunct professor",
+              "Conference presentations: Theater of the absurd"
+            ]},
+            { category: "Life Advice Parody", topics: [
+              "Why bad advice is sometimes the best advice",
+              "The joy of lowering your expectations",
+              "How to look busy while doing absolutely nothing",
+              "Surviving social interactions you didn't ask for",
+              "The art of confident incompetence"
+            ]}
+          ];
+
+          // Get a random topic or use override
+          function getRandomTopic() {
+            // 40% chance to pick a topic directly related to a book title to drive sales
+            if (Math.random() < 0.4) {
+               const book = books[Math.floor(Math.random() * books.length)];
+               return { topic: `The philosophy behind "${book.title}"`, category: "Book Spotlight", specificBook: book };
+            }
+            
+            const categoryGroup = topics[Math.floor(Math.random() * topics.length)];
+            const topic = categoryGroup.topics[Math.floor(Math.random() * categoryGroup.topics.length)];
+            return { topic, category: categoryGroup.category };
+          }
+
+          async function generateBlogPost() {
+            const topicOverride = process.env.TOPIC_OVERRIDE;
+            let selectedTopic, category, specificBook;
+
+            if (topicOverride) {
+              selectedTopic = topicOverride;
+              category = "General";
+            } else {
+              const selection = getRandomTopic();
+              selectedTopic = selection.topic;
+              category = selection.category;
+              specificBook = selection.specificBook;
+            }
+
+            // Pick a random book to plug if one isn't the main topic
+            if (!specificBook) {
+              specificBook = books[Math.floor(Math.random() * books.length)];
+            }
+
+            console.log(`Generating post about: ${selectedTopic}`);
+            console.log(`Category: ${category}`);
+            console.log(`Promoting book: ${specificBook.title}`);
+
+            const systemPrompt = `You are Prof Y Not, a witty satirical comedy author known for sharp observations about academic life and society. You write in a humorous, engaging style that's accessible but intelligent.
+
+            Writing style guidelines:
+            - Use conversational, witty tone
+            - Include personal anecdotes (fictional but believable)
+            - Add subheadings for readability
+            - End with a question to encourage engagement
+            - Keep paragraphs short and punchy
+            - Target 800-1200 words
+            
+            Marketing Goal:
+            - You MUST naturally mention and promote your book "${specificBook.title}" in the article.
+            - Treat it as the solution (or the humorous cause) of the problem being discussed.
+            - The link will be added automatically, but you must write the persuasive text to check it out.`;
+
+            const userPrompt = `Write a blog post about: "${selectedTopic}"
+            
+            The post should be entertaining, informative, and true to the Prof Y Not voice. Include practical value while maintaining humor. Make it SEO-friendly with a compelling title.
+            
+            Format the response as:
+            TITLE: [Catchy, SEO-friendly title]
+            DESCRIPTION: [Meta description, 150-160 characters]
+            TAGS: [comma-separated relevant tags]
+            ---
+            [Full blog post content in Markdown]`;
+
+            try {
+              const response = await axios.post('https://api.deepseek.com/chat/completions', {
+                model: 'deepseek-chat',
+                messages: [
+                  { role: 'system', content: systemPrompt },
+                  { role: 'user', content: userPrompt }
+                ],
+                max_tokens: 2000,
+                temperature: 0.8
+              }, {
+                headers: {
+                  'Authorization': `Bearer ${process.env.DEEPSEEK_API_KEY}`,
+                  'Content-Type': 'application/json'
+                }
+              });
+
+              const content = response.data.choices[0].message.content;
+              
+              // Parse the response
+              const titleMatch = content.match(/TITLE:\s*(.+)/i);
+              const descMatch = content.match(/DESCRIPTION:\s*(.+)/i);
+              const tagsMatch = content.match(/TAGS:\s*(.+)/i);
+              const bodyMatch = content.split('---').slice(1).join('---').trim();
+
+              const title = titleMatch ? titleMatch[1].trim() : selectedTopic;
+              const description = descMatch ? descMatch[1].trim() : `Prof Y Not discusses ${selectedTopic}`;
+              const tags = tagsMatch ? tagsMatch[1].split(',').map(t => t.trim()) : [category.toLowerCase()];
+              const body = bodyMatch || content;
+
+              // Generate filename
+              const date = new Date().toISOString().split('T')[0];
+              const slug = title
+                .toLowerCase()
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/^-|-$/g, '')
+                .substring(0, 60);
+              const filename = `${date}-${slug}.md`;
+
+              // Create frontmatter
+              // We inject a CTA button for the specific book at the end of the post content
+              const ctaHtml = `\n\n<div class="text-center mt-xl p-6 bg-yellow-50 rounded-xl">\n  <h3 class="h4 mb-4">Want more laughs?</h3>\n  <p class="mb-4">Check out my book <strong>${specificBook.title}</strong>.</p>\n  <a href="/books/${specificBook.slug}/" class="btn btn-yellow">Get the Book</a>\n</div>`;
+              
+              const finalBody = body + ctaHtml;
+
+              const frontmatter = `---
+title: "${title.replace(/"/g, '\\"')}"
+description: "${description.replace(/"/g, '\\"')}"
+date: ${date}
+draft: false
+coverImage: "${specificBook.cover}"
+categories:
+  - ${category}
+tags:
+${tags.map(t => `  - ${t}`).join('\n')}
+ogImage: "${specificBook.cover}"
+author: "Prof Y Not"
+generated: true
+---
+
+![${specificBook.title}](${specificBook.cover})
+
+${body}
+`;
+
+              // Write the file
+              const filepath = path.join('content', 'blog', filename);
+              fs.writeFileSync(filepath, frontmatter);
+              
+              console.log(`Created: ${filepath}`);
+              
+              // Set outputs for GitHub Actions
+              const outputFile = process.env.GITHUB_OUTPUT;
+              fs.appendFileSync(outputFile, `created=true\n`);
+              fs.appendFileSync(outputFile, `filename=${filename}\n`);
+
+            } catch (error) {
+              console.error('Error generating content:', error.response?.data || error.message);
+              
+              const outputFile = process.env.GITHUB_OUTPUT;
+              fs.appendFileSync(outputFile, `created=false\n`);
+              process.exit(1);
+            }
+          }
+
+          generateBlogPost();
+          EOF
+
+      - name: Commit new blog post
+        if: steps.create_post.outputs.created == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add content/blog/
+          git commit -m "📝 Auto-generated blog post: ${{ steps.create_post.outputs.filename }}"
+          git push
+
+  # Job 2: Build and Deploy
+  build-deploy:
+    runs-on: ubuntu-latest
+    needs: [generate-content]
+    if: |
+      always() && 
+      (needs.generate-content.result == 'success' || needs.generate-content.result == 'skipped') &&
+      (github.event.inputs.skip_deploy != 'true')
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main  # Get latest including any new posts
+
+      - name: Pull latest changes
+        run: git pull origin main
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: true
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v4
+
+      - name: Build with Hugo
+        env:
+          HUGO_ENVIRONMENT: production
+        run: |
+          hugo \
+            --gc \
+            --minify \
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
+
+      - name: Generate sitemap
+        run: |
+          echo "Sitemap generated by Hugo build"
+          ls -la public/sitemap.xml || echo "Sitemap not found"
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  # Job 3: Notify on failure
+  notify-failure:
+    runs-on: ubuntu-latest
+    needs: [generate-content, build-deploy]
+    if: failure()
+    steps:
+      - name: Log failure
+        run: |
+          echo "Workflow failed. Check the logs for details."
+          echo "Generate content result: ${{ needs.generate-content.result }}"
+          echo "Build/Deploy result: ${{ needs.build-deploy.result }}"
