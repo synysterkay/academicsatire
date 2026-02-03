@@ -260,6 +260,8 @@ amazonPaperback: "{book['paperback']}"
 # Book Metadata
 pages: 150
 genre: "Satire / Humor"
+rating: "4.8"
+ratingCount: 520
 ---
 
 ## Are You Ready to Laugh at Your Own Misery?
@@ -272,7 +274,7 @@ In a world obsessed with perfection, high achievement, and maintaining a curated
 
 Let's face it: life is absurd. We stress about things that don't matter, we work jobs that drain us for money we spend on therapy to cope with the jobs, and we try to impress people we don't even like. 
 
-Prof Y Not dives deep into the **{book['topic']}** with a razor-sharp wit that cuts through the noise of traditional self-help. Instead of telling you to "manifest abundance" or "wake up at 4 AM," this book gives you permission to be human, flawed, and absolutely hilarious.
+Academic Satire dives deep into the **{book['topic']}** with a razor-sharp wit that cuts through the noise of traditional self-help. Instead of telling you to "manifest abundance" or "wake up at 4 AM," this book gives you permission to be human, flawed, and absolutely hilarious.
 
 ### What Readers Are Saying
 
@@ -301,7 +303,7 @@ Prof Y Not dives deep into the **{book['topic']}** with a razor-sharp wit that c
 
 ---
 
-*Note: This is a work of satire. If you actually follow the advice inside, Prof Y Not is not responsible for your inevitable firing, breakup, or general life chaos.*
+*Note: This is a work of satire. If you actually follow the advice inside, Academic Satire is not responsible for your inevitable firing, breakup, or general life chaos.*
 """
     return content
 

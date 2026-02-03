@@ -18,12 +18,13 @@
   };
 
   ready(() => {
-    initThemeToggle();
+    // initThemeToggle();
     initHeader();
     initMobileNav();
     initSmoothScroll();
     initRevealAnimations();
     initScrollHint();
+    initCookieConsent();
   });
 
   // ============================================
@@ -243,6 +244,74 @@
         btn.innerHTML = '<span class="loading"></span> Subscribing...';
         btn.disabled = true;
       }
+    });
+  }
+
+  // ============================================
+  // Cookie Consent (GDPR)
+  // ============================================
+  function initCookieConsent() {
+    const banner = document.getElementById('cookie-consent');
+    const acceptBtn = document.getElementById('cookie-accept');
+    const rejectBtn = document.getElementById('cookie-reject');
+    const settingsBtn = document.getElementById('cookie-settings-btn');
+    const settingsPanel = document.getElementById('cookie-settings');
+    const saveBtn = document.getElementById('cookie-save-preferences');
+    const cancelSettingsBtn = document.getElementById('cookie-settings-cancel');
+
+    if (!banner) return;
+
+    // Check if user has already made a choice
+    const consent = localStorage.getItem('cookie-consent');
+    if (!consent) {
+      setTimeout(() => {
+        banner.classList.add('active');
+        banner.setAttribute('aria-hidden', 'false');
+      }, 2000);
+    }
+
+    const hideBanner = () => {
+      banner.classList.remove('active');
+      banner.setAttribute('aria-hidden', 'true');
+    };
+
+    acceptBtn?.addEventListener('click', () => {
+      localStorage.setItem('cookie-consent', 'accepted');
+      localStorage.setItem('cookie-analytics', 'true');
+      localStorage.setItem('cookie-marketing', 'true');
+      hideBanner();
+      // Logic to enable tracking scripts here
+      location.reload(); 
+    });
+
+    rejectBtn?.addEventListener('click', () => {
+      localStorage.setItem('cookie-consent', 'rejected');
+      localStorage.setItem('cookie-analytics', 'false');
+      localStorage.setItem('cookie-marketing', 'false');
+      hideBanner();
+    });
+
+    settingsBtn?.addEventListener('click', () => {
+      settingsPanel?.classList.add('active');
+      settingsPanel?.setAttribute('aria-hidden', 'false');
+    });
+
+    cancelSettingsBtn?.addEventListener('click', () => {
+      settingsPanel?.classList.remove('active');
+      settingsPanel?.setAttribute('aria-hidden', 'true');
+    });
+
+    saveBtn?.addEventListener('click', () => {
+      const analytics = document.getElementById('cookie-analytics')?.checked;
+      const marketing = document.getElementById('cookie-marketing')?.checked;
+      
+      localStorage.setItem('cookie-consent', 'custom');
+      localStorage.setItem('cookie-analytics', analytics);
+      localStorage.setItem('cookie-marketing', marketing);
+      
+      settingsPanel?.classList.remove('active');
+      hideBanner();
+      location.reload();
     });
   }
 

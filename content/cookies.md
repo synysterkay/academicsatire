@@ -1,6 +1,6 @@
 ---
 title: "Cookie Policy"
-description: "Cookie Policy for Prof Y Not website - Information about how we use cookies and similar technologies."
+description: "Cookie Policy for Academic Satire website - Information about how we use cookies and similar technologies."
 date: 2026-01-01
 lastmod: 2026-02-01
 layout: "legal"
@@ -10,7 +10,7 @@ layout: "legal"
 
 **Last Updated: February 1, 2026**
 
-This Cookie Policy explains how Prof Y Not ("we," "us," or "our") uses cookies and similar tracking technologies when you visit our website profynot.com (the "Site").
+This Cookie Policy explains how Academic Satire ("we," "us," or "our") uses cookies and similar tracking technologies when you visit our website academicsatire.com (the "Site").
 
 ## What Are Cookies?
 

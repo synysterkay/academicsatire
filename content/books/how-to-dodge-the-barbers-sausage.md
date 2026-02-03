@@ -31,7 +31,7 @@ In a world obsessed with perfection, high achievement, and maintaining a curated
 
 Let's face it: life is absurd. We stress about things that don't matter, we work jobs that drain us for money we spend on therapy to cope with the jobs, and we try to impress people we don't even like. 
 
-Prof Y Not dives deep into the **Awkward Encounters** with a razor-sharp wit that cuts through the noise of traditional self-help. Instead of telling you to "manifest abundance" or "wake up at 4 AM," this book gives you permission to be human, flawed, and absolutely hilarious.
+Academic Satire dives deep into the **Awkward Encounters** with a razor-sharp wit that cuts through the noise of traditional self-help. Instead of telling you to "manifest abundance" or "wake up at 4 AM," this book gives you permission to be human, flawed, and absolutely hilarious.
 
 ### What Readers Are Saying
 

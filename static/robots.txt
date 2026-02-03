@@ -1,7 +1,10 @@
-# Prof Y Not Website
+# Academic Satire Website
 
 User-agent: *
 Allow: /
+
+# Sitemap
+Sitemap: https://academicsatire.com/sitemap.xml
 
 # Disallow admin/utility paths
 Disallow: /admin/

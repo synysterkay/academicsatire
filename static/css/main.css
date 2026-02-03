@@ -151,6 +151,22 @@ p { margin-bottom: 1rem; }
 }
 
 /* Logo */
+.logo-link {
+  display: flex;
+  align-items: center;
+  transition: opacity 0.2s ease;
+}
+
+.logo-link:hover {
+  opacity: 0.8;
+}
+
+.logo-img {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+
 .logo {
   font-family: var(--font-heading);
   font-size: 1.5rem;
@@ -863,8 +879,8 @@ p { margin-bottom: 1rem; }
    Newsletter
 ================================================================== */
 .newsletter-section {
-  background: var(--gray-900);
-  color: var(--white);
+  background: var(--mustard);
+  color: var(--black);
 }
 
 .newsletter-inner {
@@ -874,13 +890,16 @@ p { margin-bottom: 1rem; }
 }
 
 .newsletter-title {
-  color: var(--white);
+  color: var(--black);
   margin-bottom: 16px;
+  font-size: 3rem;
 }
 
 .newsletter-desc {
-  color: var(--gray-400);
+  color: var(--near-black);
   margin-bottom: 32px;
+  font-size: 1.2rem;
+  opacity: 0.9;
 }
 
 .newsletter-form {
@@ -894,10 +913,10 @@ p { margin-bottom: 1rem; }
   flex: 1;
   padding: 16px 24px;
   font-size: 1rem;
-  border: none;
+  border: 2px solid var(--black);
   border-radius: 50px;
-  background: var(--gray-800);
-  color: var(--white);
+  background: var(--white);
+  color: var(--black);
 }
 
 .newsletter-form input::placeholder {
@@ -905,7 +924,19 @@ p { margin-bottom: 1rem; }
 }
 
 .newsletter-form input:focus {
-  outline: 2px solid var(--yellow);
+  outline: none;
+  border-color: var(--near-black);
+}
+
+.newsletter-form .btn {
+  background: var(--black);
+  color: var(--white);
+  border: 2px solid var(--black);
+}
+
+.newsletter-form .btn:hover {
+  background: var(--white);
+  color: var(--black);
 }
 
 @media (max-width: 600px) {
@@ -928,6 +959,12 @@ p { margin-bottom: 1rem; }
   grid-template-columns: 1.5fr 1fr 1fr 1fr;
   gap: 48px;
   margin-bottom: 60px;
+}
+
+.footer-logo-img {
+  height: 40px;
+  width: auto;
+  display: block;
 }
 
 .footer-logo {

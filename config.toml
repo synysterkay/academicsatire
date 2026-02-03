@@ -9,12 +9,12 @@ enableGitInfo = false
   pagerSize = 9
 
 [params]
-  description = "Discover hilarious satire books by Prof Y Not. Academic comedy, witty humor, and laugh-out-loud reads available on Amazon Kindle and paperback."
-  author = "Prof Y Not"
-  authorTagline = "Because Laughter is the Best Tenure"
-  logo = "/images/logo.png"
-  ogImage = "/images/og-default.jpg"
-  twitterHandle = "@ProfYNot"
+  description = "Discover hilarious satire books by Academic Satire. Academic comedy, witty humor, and laugh-out-loud reads available on Amazon Kindle and paperback."
+  author = "Academic Satire"
+  authorTagline = "Where Academia Meets Absurdity"
+  logo = "/images/logo.svg"
+  ogImage = "/favicon.svg"
+  twitterHandle = "@AcademicSatire"
   amazonAuthorPage = "https://www.amazon.com/author/profynot"
   newsletterEndpoint = "/api/newsletter"
   googleAnalyticsID = "G-XXXXXXXXXX"
@@ -22,7 +22,7 @@ enableGitInfo = false
   bingSiteVerification = "YOUR_BING_VERIFICATION_CODE"
 
 [params.hero]
-  title = "Prof Y Not"
+  title = "Academic Satire"
   subtitle = "Satire So Sharp, It Deserves Tenure"
   ctaPrimary = "Explore Books"
   ctaSecondary = "Read the Blog"

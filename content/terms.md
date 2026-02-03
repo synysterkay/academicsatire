@@ -1,6 +1,6 @@
 ---
 title: "Terms of Service"
-description: "Terms of Service for Prof Y Not website - Rules and guidelines for using our site."
+description: "Terms of Service for Academic Satire website - Rules and guidelines for using our site."
 date: 2026-01-01
 lastmod: 2026-02-01
 layout: "legal"
@@ -10,7 +10,7 @@ layout: "legal"
 
 **Last Updated: February 1, 2026**
 
-Welcome to Prof Y Not! These Terms of Service ("Terms") govern your use of the website profynot.com (the "Site") operated by Prof Y Not ("we," "us," or "our").
+Welcome to Academic Satire! These Terms of Service ("Terms") govern your use of the website academicsatire.com (the "Site") operated by Academic Satire ("we," "us," or "our").
 
 By accessing or using our Site, you agree to be bound by these Terms. If you disagree with any part of these Terms, please do not use our Site.
 
@@ -34,7 +34,7 @@ You may use our Site for personal, non-commercial purposes. You agree not to:
 
 ### 2.1 Our Content
 
-All content on this Site, including text, graphics, logos, images, and software, is the property of Prof Y Not or our licensors and is protected by copyright and other intellectual property laws.
+All content on this Site, including text, graphics, logos, images, and software, is the property of Academic Satire or our licensors and is protected by copyright and other intellectual property laws.
 
 ### 2.2 Limited License
 

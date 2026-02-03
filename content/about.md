@@ -1,15 +1,15 @@
 ---
-title: "About Prof Y Not"
-description: "Meet Prof Y Not, the satirical comedy author behind hilarious books about academic life, faculty meetings, and the absurdities of higher education."
+title: "About Academic Satire"
+description: "Meet the satirical comedy author behind Academic Satire, known for hilarious books about academic life, faculty meetings, and the absurdities of higher education."
 layout: "about"
-ogImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&q=80"
+ogImage: "https://m.media-amazon.com/images/I/91FHiKJgScL._SL1500_.jpg"
 ---
 
 <section class="about-hero">
   <div class="about-hero-content">
-    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Prof Y Not - Satirical Comedy Author" class="about-photo">
+    <img src="https://m.media-amazon.com/images/I/91FHiKJgScL._SL1500_.jpg" alt="Academic Satire - Satirical Comedy Author" class="about-photo">
     <div class="about-intro">
-      <h1>About Prof Y Not</h1>
+      <h1>About Academic Satire</h1>
       <p class="tagline">Satirist. Author. Recovering Academic.</p>
     </div>
   </div>
@@ -41,7 +41,7 @@ I write satire because it's the only reasonable response to a world where people
 
 > "If you can't fix it, feature it. If you can't feature it, make fun of it. If you can't make fun of it, you're probably in a committee meeting."
 > 
-> — Prof Y Not, during a committee meeting
+> — Academic Satire, during a committee meeting
 
 My goal is simple: to make you laugh, make you think, and make you feel less alone in whatever institutional absurdity you're currently navigating.
 

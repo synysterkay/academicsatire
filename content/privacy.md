@@ -1,6 +1,6 @@
 ---
 title: "Privacy Policy"
-description: "Privacy Policy for Prof Y Not website - How we collect, use, and protect your personal information."
+description: "Privacy Policy for Academic Satire website - How we collect, use, and protect your personal information."
 date: 2026-01-01
 lastmod: 2026-02-01
 layout: "legal"
@@ -10,7 +10,7 @@ layout: "legal"
 
 **Last Updated: February 1, 2026**
 
-Prof Y Not ("we," "us," or "our") respects your privacy and is committed to protecting your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website profynot.com (the "Site").
+Academic Satire ("we," "us," or "our") respects your privacy and is committed to protecting your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website academicsatire.com (the "Site").
 
 ## 1. Information We Collect
 

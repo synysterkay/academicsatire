@@ -1,6 +1,6 @@
 ---
-title: "Contact Prof Y Not"
-description: "Get in touch with Prof Y Not for speaking engagements, press inquiries, book clubs, or just to share your best faculty meeting horror story."
+title: "Contact Academic Satire"
+description: "Get in touch with Academic Satire for speaking engagements, press inquiries, book clubs, or just to share your best faculty meeting horror story."
 layout: "contact"
 ---
 
@@ -12,13 +12,13 @@ Whether you want to discuss speaking engagements, share your own academic absurd
 
 Have a question about a book? Want to share how a chapter resonated with you? Accidentally snorted coffee while reading? I want to hear about it all.
 
-**Email**: readers [at] profynot [dot] com
+**Email**: readers [at] academicsatire [dot] com
 
 ## For Media & Press
 
 Interview requests, review copies, and press inquiries welcome.
 
-**Email**: press [at] profynot [dot] com
+**Email**: press [at] academicsatire [dot] com
 
 ## For Speaking & Events
 
