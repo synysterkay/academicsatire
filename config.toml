@@ -1,6 +1,6 @@
-baseURL = "https://profynot.github.io/"
+baseURL = "https://academicsatire.com/"
 languageCode = "en-us"
-title = "Prof Y Not | Satirical Comedy Books & Academic Humor"
+title = "Academic Satire | Prof Y Not's Comedy Books"
 theme = "profynot-theme"
 enableRobotsTXT = true
 enableGitInfo = false
