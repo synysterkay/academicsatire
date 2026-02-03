@@ -1,0 +1,38 @@
+{{ define "main" }}
+<section class="about-page">
+  <div class="container">
+    <div class="about-content prose">
+      {{ .Content }}
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter Section -->
+<section class="newsletter-section section" id="newsletter">
+  <div class="container">
+    <div class="newsletter-card">
+      <div class="newsletter-content">
+        <span class="newsletter-icon">💌</span>
+        <h2 class="newsletter-title">Join the Satire Squad</h2>
+        <p class="newsletter-description">
+          Get exclusive humor, early book announcements, and occasional academic rants 
+          delivered straight to your inbox.
+        </p>
+        
+        <form class="newsletter-form-large" action="{{ .Site.Params.newsletterEndpoint }}" method="POST" data-gdpr="true">
+          <div class="form-row">
+            <div class="form-group">
+              <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address">
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg">Subscribe</button>
+          </div>
+          <label class="gdpr-consent">
+            <input type="checkbox" name="gdpr_consent" required>
+            <span>I agree to receive emails and accept the <a href="/privacy/">Privacy Policy</a></span>
+          </label>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

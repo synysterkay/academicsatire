@@ -1,0 +1,48 @@
+{{- /* Newsletter Form Partial */ -}}
+{{ $position := .position | default "inline" }}
+{{ $title := .title | default "Subscribe to the Newsletter" }}
+{{ $description := .description | default "Get new posts, book updates, and exclusive content delivered to your inbox." }}
+
+<div class="newsletter-form-wrapper newsletter-{{ $position }}">
+  {{ if ne $position "minimal" }}
+  <div class="newsletter-header">
+    <span class="newsletter-icon">💌</span>
+    <h3 class="newsletter-title">{{ $title }}</h3>
+    <p class="newsletter-description">{{ $description }}</p>
+  </div>
+  {{ end }}
+  
+  <form class="newsletter-form" 
+        action="{{ $.Site.Params.newsletterEndpoint | default "/api/subscribe" }}" 
+        method="POST"
+        data-gdpr="true">
+    
+    <div class="form-fields">
+      <div class="form-group">
+        <input type="email" 
+               name="email" 
+               placeholder="your@email.com" 
+               required 
+               aria-label="Email address">
+      </div>
+      <button type="submit" class="btn btn-primary">
+        {{ if eq $position "minimal" }}→{{ else }}Subscribe{{ end }}
+      </button>
+    </div>
+    
+    {{ if ne $position "minimal" }}
+    <label class="gdpr-consent">
+      <input type="checkbox" name="gdpr_consent" required>
+      <span>I agree to receive emails and accept the <a href="/privacy/">Privacy Policy</a></span>
+    </label>
+    {{ end }}
+    
+    <div class="form-message" role="alert" aria-live="polite"></div>
+  </form>
+  
+  {{ if ne $position "minimal" }}
+  <p class="newsletter-privacy">
+    <small>No spam, ever. Unsubscribe anytime.</small>
+  </p>
+  {{ end }}
+</div>

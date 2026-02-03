@@ -1,0 +1,16 @@
+/* Place images in this directory */
+/* Recommended images to add:
+   - logo.svg or logo.png (site logo)
+   - author.jpg (author photo)
+   - hero-bg.jpg (hero background image)
+   - og-default.jpg (default Open Graph image, 1200x630px)
+   - book-covers/ (folder for book cover images)
+   - blog/ (folder for blog post images)
+*/
+
+/* Image optimization tips:
+   - Use WebP format where possible
+   - Provide 2x versions for retina displays
+   - Keep images under 200KB
+   - Use lazy loading for images below the fold
+*/

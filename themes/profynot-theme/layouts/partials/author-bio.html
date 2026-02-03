@@ -1,0 +1,35 @@
+{{- /* Author Bio Partial - Include on blog posts */ -}}
+{{ $author := .Site.Params.author | default "Prof Y Not" }}
+
+<div class="author-bio-card">
+  <div class="author-avatar">
+    {{ with .Site.Params.authorImage }}
+    <img src="{{ . }}" alt="{{ $author }}" loading="lazy">
+    {{ else }}
+    <div class="author-avatar-placeholder">
+      <span>{{ substr $author 0 1 }}</span>
+    </div>
+    {{ end }}
+  </div>
+  
+  <div class="author-info">
+    <h3>Written by {{ $author }}</h3>
+    <p>{{ .Site.Params.authorBio | default "Satirist, author, and recovering academic. Writing humor about the absurdities of university life and the human condition." }}</p>
+    
+    <div class="author-links">
+      {{ with .Site.Params.social.twitter }}
+      <a href="https://twitter.com/{{ . }}" target="_blank" rel="noopener" aria-label="Twitter">
+        <span>Twitter</span>
+      </a>
+      {{ end }}
+      {{ with .Site.Params.social.instagram }}
+      <a href="https://instagram.com/{{ . }}" target="_blank" rel="noopener" aria-label="Instagram">
+        <span>Instagram</span>
+      </a>
+      {{ end }}
+      <a href="/about/" aria-label="About">
+        <span>More about me</span>
+      </a>
+    </div>
+  </div>
+</div>

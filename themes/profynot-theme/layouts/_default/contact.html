@@ -1,0 +1,123 @@
+{{ define "main" }}
+<section class="contact-page section">
+  <div class="container container-narrow">
+    <div class="contact-content prose">
+      {{ .Content }}
+    </div>
+    
+    <!-- Contact Form -->
+    <div class="contact-form-wrapper">
+      <h2>Send a Message</h2>
+      <form class="contact-form" action="/api/contact" method="POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your name">
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="your@email.com">
+        </div>
+        
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject" required>
+            <option value="">Select a topic...</option>
+            <option value="general">General Inquiry</option>
+            <option value="speaking">Speaking & Events</option>
+            <option value="press">Press & Media</option>
+            <option value="rights">Rights & Licensing</option>
+            <option value="feedback">Book Feedback</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required placeholder="Your message..."></textarea>
+        </div>
+        
+        <label class="gdpr-consent">
+          <input type="checkbox" name="privacy_consent" required>
+          <span>I have read and accept the <a href="/privacy/">Privacy Policy</a></span>
+        </label>
+        
+        <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<style>
+.contact-form-wrapper {
+  margin-top: var(--space-12);
+  padding-top: var(--space-12);
+  border-top: 1px solid var(--color-border);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: 600px;
+}
+
+.contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.contact-form label {
+  font-weight: 600;
+  font-size: var(--text-sm);
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  padding: var(--space-4);
+  font-size: var(--text-base);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: inherit;
+  transition: border-color var(--transition-fast);
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.social-links-large {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin: var(--space-6) 0;
+}
+
+.social-links-large a {
+  padding: var(--space-3) var(--space-6);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.social-links-large a:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+</style>
+{{ end }}

@@ -1,0 +1,107 @@
+{{ define "main" }}
+<section class="taxonomy-page section">
+  <div class="container">
+    <header class="taxonomy-header">
+      <h1 class="taxonomy-title">
+        <span class="taxonomy-icon">📂</span>
+        {{ .Title }}
+      </h1>
+      {{ with .Description }}
+      <p class="taxonomy-description">{{ . }}</p>
+      {{ end }}
+      <p class="taxonomy-count">{{ len .Pages }} {{ if eq (len .Pages) 1 }}post{{ else }}posts{{ end }}</p>
+    </header>
+    
+    <div class="posts-grid">
+      {{ range .Pages }}
+      <article class="post-card">
+        {{ with .Params.ogImage }}
+        <div class="post-image">
+          <a href="{{ $.RelPermalink }}">
+            <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+          </a>
+        </div>
+        {{ end }}
+        
+        <div class="post-content">
+          <div class="post-meta">
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+            {{ with .Params.categories }}
+            <span class="post-category">{{ index . 0 }}</span>
+            {{ end }}
+          </div>
+          
+          <h2 class="post-title">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </h2>
+          
+          <p class="post-excerpt">{{ .Summary | truncate 150 }}</p>
+          
+          <a href="{{ .RelPermalink }}" class="read-more">
+            Read more →
+          </a>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+    
+    {{ if gt (len .Pages) 12 }}
+    {{ partial "pagination.html" . }}
+    {{ end }}
+  </div>
+</section>
+
+<!-- All Categories/Tags List -->
+<section class="section bg-secondary">
+  <div class="container">
+    <h2 class="section-title">All {{ .Data.Plural | title }}</h2>
+    <div class="taxonomy-list">
+      {{ range .Data.Terms.ByCount }}
+      <a href="{{ .Page.RelPermalink }}" class="taxonomy-item">
+        <span class="taxonomy-name">{{ .Page.Title }}</span>
+        <span class="taxonomy-count-badge">{{ .Count }}</span>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<style>
+.taxonomy-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  justify-content: center;
+}
+
+.taxonomy-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+}
+
+.taxonomy-item:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+
+.taxonomy-count-badge {
+  font-size: var(--text-xs);
+  padding: 2px 6px;
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-full);
+  font-weight: 600;
+}
+
+.taxonomy-item:hover .taxonomy-count-badge {
+  background: rgba(255,255,255,0.2);
+  color: white;
+}
+</style>
+{{ end }}

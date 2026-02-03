@@ -1,0 +1,29 @@
+{{ define "main" }}
+<section class="list-archive section-hero">
+  <div class="container">
+    <h1 class="archive-title">{{ .Title }}</h1>
+    {{ with .Description }}
+    <p class="archive-description">{{ . }}</p>
+    {{ end }}
+    
+    <div class="archive-grid">
+      {{ range .Pages }}
+      <article class="archive-card">
+        <a href="{{ .Permalink }}" class="archive-card-link">
+          {{ with .Params.ogImage }}
+          <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+          {{ end }}
+          <div class="archive-card-content">
+            <h2>{{ .Title }}</h2>
+            <p>{{ .Summary | truncate 150 }}</p>
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+          </div>
+        </a>
+      </article>
+      {{ end }}
+    </div>
+    
+    {{ partial "pagination.html" . }}
+  </div>
+</section>
+{{ end }}

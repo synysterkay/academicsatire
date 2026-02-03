@@ -1,0 +1,16 @@
+{{- /* Table of Contents Partial for Blog Posts */ -}}
+{{ if .Params.toc | default true }}
+{{ $headers := findRE "<h[2-3].*?>(.|\n)*?</h[2-3]>" .Content }}
+{{ if ge (len $headers) 3 }}
+<aside class="table-of-contents">
+  <details open>
+    <summary>
+      <h2 class="toc-title">Table of Contents</h2>
+    </summary>
+    <nav class="toc-nav">
+      {{ .TableOfContents }}
+    </nav>
+  </details>
+</aside>
+{{ end }}
+{{ end }}

@@ -1,0 +1,130 @@
+{{ define "main" }}
+<section class="error-page">
+  <div class="container">
+    <div class="error-content">
+      <h1 class="error-code">404</h1>
+      <h2 class="error-title">Page Not Found</h2>
+      <p class="error-description">
+        Well, this is awkward. Like showing up to a faculty meeting that was cancelled 
+        three weeks ago but nobody told you.
+      </p>
+      <p class="error-subtitle">
+        The page you're looking for has either been moved, deleted, or never existed 
+        in the first place (much like my work-life balance).
+      </p>
+      
+      <div class="error-actions">
+        <a href="/" class="btn btn-primary">Go Home</a>
+        <a href="/books/" class="btn btn-secondary">Browse Books</a>
+        <a href="/blog/" class="btn btn-ghost">Read the Blog</a>
+      </div>
+      
+      <div class="error-illustration">
+        <span class="error-emoji">📚🔍❓</span>
+      </div>
+      
+      <div class="error-suggestions">
+        <h3>Maybe you were looking for:</h3>
+        <ul class="suggestions-list">
+          {{ range first 5 (where .Site.RegularPages "Section" "blog") }}
+          <li>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.error-page {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-12) 0;
+}
+
+.error-content {
+  max-width: 600px;
+}
+
+.error-code {
+  font-size: clamp(6rem, 20vw, 12rem);
+  font-weight: 900;
+  line-height: 1;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--space-4);
+}
+
+.error-title {
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-4);
+}
+
+.error-description {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.error-subtitle {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-8);
+}
+
+.error-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  justify-content: center;
+  margin-bottom: var(--space-12);
+}
+
+.error-illustration {
+  font-size: 4rem;
+  margin-bottom: var(--space-8);
+  opacity: 0.8;
+}
+
+.error-suggestions {
+  text-align: left;
+  padding: var(--space-6);
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-xl);
+}
+
+.error-suggestions h3 {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-4);
+}
+
+.suggestions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.suggestions-list li {
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.suggestions-list li:last-child {
+  border-bottom: none;
+}
+
+.suggestions-list a {
+  color: var(--color-primary);
+}
+
+.suggestions-list a:hover {
+  text-decoration: underline;
+}
+</style>
+{{ end }}

@@ -1,0 +1,68 @@
+{{ define "main" }}
+<section class="taxonomy-page section">
+  <div class="container">
+    <header class="taxonomy-header">
+      <h1 class="taxonomy-title">
+        {{ if eq .Data.Singular "category" }}
+        <span class="taxonomy-icon">📁</span>
+        {{ else }}
+        <span class="taxonomy-icon">🏷️</span>
+        {{ end }}
+        Browse by {{ .Data.Singular | title }}
+      </h1>
+      <p class="taxonomy-description">Explore all {{ .Data.Plural }} on Prof Y Not</p>
+    </header>
+    
+    <div class="taxonomy-grid">
+      {{ range .Data.Terms.ByCount }}
+      <a href="{{ .Page.RelPermalink }}" class="taxonomy-card">
+        <span class="taxonomy-card-name">{{ .Page.Title }}</span>
+        <span class="taxonomy-card-count">{{ .Count }} {{ if eq .Count 1 }}post{{ else }}posts{{ end }}</span>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<style>
+.taxonomy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-4);
+}
+
+.taxonomy-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8) var(--space-6);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  text-align: center;
+  transition: all var(--transition-normal);
+}
+
+.taxonomy-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-lg);
+}
+
+.taxonomy-card-name {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+}
+
+.taxonomy-card-count {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.taxonomy-card:hover .taxonomy-card-name {
+  color: var(--color-primary);
+}
+</style>
+{{ end }}

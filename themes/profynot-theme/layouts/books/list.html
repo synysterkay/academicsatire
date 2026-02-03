@@ -1,0 +1,94 @@
+{{ define "main" }}
+<section class="books-archive section-hero">
+  <div class="container">
+    <div class="archive-header">
+      <h1 class="archive-title">All Books by Prof Y Not</h1>
+      <p class="archive-description">
+        Explore the complete collection of satirical comedy, academic humor, and laugh-out-loud reads. 
+        From biting social commentary to absurdist academia, there's a book for every flavor of funny.
+      </p>
+    </div>
+    
+    <div class="books-filter">
+      <button class="filter-btn active" data-filter="all">All Books</button>
+      <button class="filter-btn" data-filter="satire">Satire</button>
+      <button class="filter-btn" data-filter="comedy">Comedy</button>
+      <button class="filter-btn" data-filter="academic">Academic Humor</button>
+    </div>
+    
+    <div class="books-grid-full">
+      {{ range where .Site.RegularPages "Section" "books" }}
+      <article class="book-card-large reveal-up" data-genre="{{ .Params.genre | urlize }}">
+        <div class="book-card-cover-large">
+          <a href="{{ .Permalink }}">
+            <img src="{{ with .Params.coverImage }}{{ . }}{{ else }}https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=400&q=80{{ end }}" 
+                 alt="{{ .Title }} book cover"
+                 loading="lazy">
+          </a>
+          {{ if .Params.bestseller }}
+          <span class="book-badge bestseller">🔥 Bestseller</span>
+          {{ end }}
+        </div>
+        
+        <div class="book-card-content-large">
+          <div class="book-card-header">
+            <h2 class="book-card-title-large">
+              <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </h2>
+            {{ with .Params.rating }}
+            <div class="book-card-rating">
+              <span class="stars">{{ range seq 5 }}{{ if le . (int (math.Floor $.Params.rating)) }}★{{ else }}☆{{ end }}{{ end }}</span>
+              <span class="rating-text">{{ . }} ({{ $.Params.ratingCount }} reviews)</span>
+            </div>
+            {{ end }}
+          </div>
+          
+          <p class="book-card-tagline">{{ .Params.tagline }}</p>
+          <p class="book-card-description">{{ .Summary | truncate 200 }}</p>
+          
+          <div class="book-card-meta">
+            {{ with .Params.pages }}<span>📄 {{ . }} pages</span>{{ end }}
+            {{ with .Params.genre }}<span>📚 {{ . }}</span>{{ end }}
+          </div>
+          
+          <div class="book-card-actions">
+            <a href="{{ .Params.amazonKindle }}?tag=profynot-20" 
+               class="btn btn-amazon" 
+               target="_blank" 
+               rel="noopener">
+              Kindle — ${{ .Params.kindlePrice }}
+            </a>
+            <a href="{{ .Params.amazonPaperback }}?tag=profynot-20" 
+               class="btn btn-outline" 
+               target="_blank" 
+               rel="noopener">
+              Paperback — ${{ .Params.paperbackPrice }}
+            </a>
+            <a href="{{ .Permalink }}" class="btn btn-ghost">
+              Learn More →
+            </a>
+          </div>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- Author CTA -->
+<section class="author-cta section">
+  <div class="container">
+    <div class="author-cta-card">
+      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80" alt="Prof Y Not" class="author-cta-photo" loading="lazy">
+      <div class="author-cta-content">
+        <h2>Meet Prof Y Not</h2>
+        <p>
+          The mastermind behind these satirical gems. Learn about the journey from academia to 
+          absurdity, and why laughter really is the best tenure.
+        </p>
+        <a href="/about/" class="btn btn-primary">About the Author</a>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

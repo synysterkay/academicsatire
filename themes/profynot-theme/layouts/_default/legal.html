@@ -1,0 +1,61 @@
+{{ define "main" }}
+<section class="legal-page section">
+  <div class="container container-narrow">
+    <article class="legal-content prose">
+      {{ .Content }}
+    </article>
+    
+    <div class="legal-footer">
+      <p>Last updated: {{ .Params.lastmod | default .Date | time.Format "January 2, 2006" }}</p>
+      <p>Questions? Contact us at <a href="mailto:privacy@profynot.com">privacy@profynot.com</a></p>
+    </div>
+  </div>
+</section>
+
+<style>
+.legal-page {
+  padding-top: var(--space-24);
+}
+
+.legal-content {
+  max-width: 100%;
+}
+
+.legal-content h1 {
+  margin-bottom: var(--space-8);
+}
+
+.legal-content h2 {
+  margin-top: var(--space-10);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border);
+}
+
+.legal-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-6) 0;
+  font-size: var(--text-sm);
+}
+
+.legal-content th,
+.legal-content td {
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  border: 1px solid var(--color-border);
+}
+
+.legal-content th {
+  background: var(--color-bg-secondary);
+  font-weight: 600;
+}
+
+.legal-footer {
+  margin-top: var(--space-12);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+</style>
+{{ end }}

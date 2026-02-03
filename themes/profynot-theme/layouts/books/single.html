@@ -1,0 +1,128 @@
+{{ define "main" }}
+<article class="single-book">
+  <!-- Book Hero -->
+  <section class="book-hero">
+    <div class="container">
+      <div class="mb-lg">
+        <a href="/books/" class="text-sm text-gray-500 hover:text-yellow-600">← Back to All Books</a>
+      </div>
+      
+      <div class="book-hero-grid">
+        <div class="book-cover-main">
+          <img src="{{ with .Params.coverImage }}{{ . }}{{ else }}https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=600&q=80{{ end }}" 
+               alt="{{ .Title }}"
+               class="reveal-left"
+               loading="eager">
+          
+          <div class="mt-lg text-center">
+            <p class="text-sm text-gray-500">Available formats: eBook, Paperback</p>
+          </div>
+        </div>
+        
+        <div class="book-info reveal-right">
+          <span style="display:inline-block; padding: 4px 12px; margin-bottom: 16px; font-size: 0.75rem; font-weight: 700; color: #78350f; background: #fef3c7; border-radius: 99px;">
+            {{ with .Params.genre }}{{ . }}{{ else }}Satire / Humor{{ end }}
+          </span>
+          
+          <h1 class="hero-title" style="font-size: 2.5rem; margin-bottom: 1rem;">{{ .Title }}</h1>
+          
+          <p class="book-tagline">{{ .Params.tagline }}</p>
+          
+          <div class="book-meta">
+            {{ with .Params.pages }}<span>{{ . }} Pages</span>{{ end }}
+            {{ with .Params.date }}<span>Published {{ .Format "Jan 2006" }}</span>{{ end }}
+            <span>English</span>
+          </div>
+          
+          <div class="book-description">
+            <p class="lead" style="font-size: 1.1rem; color: #525252; margin-bottom: 24px;">{{ .Params.shortDescription }}</p>
+          </div>
+          
+          <div class="book-buttons">
+            {{ with .Params.amazonKindle }}
+            <a href="{{ . }}" target="_blank" rel="noopener" class="btn btn-yellow btn-lg">
+              Buy Kindle eBook
+            </a>
+            {{ end }}
+            
+            {{ with .Params.amazonPaperback }}
+            <a href="{{ . }}" target="_blank" rel="noopener" class="btn btn-dark btn-lg">
+              Buy Paperback
+            </a>
+            {{ end }}
+          </div>
+          
+          <div class="book-details mt-xl">
+            <h4>Book Details</h4>
+            <ul class="book-details-list">
+              <li><span>Author:</span> <span>Prof Y Not</span></li>
+              <li><span>Language:</span> <span>English</span></li>
+              <li><span>Formats:</span> <span>Kindle, Paperback</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Book Content / Long Description -->
+  <section class="section">
+    <div class="container container-narrow">
+      <div class="prose">
+        {{ .Content }}
+      </div>
+      
+      <div class="mt-3xl text-center p-8 bg-yellow-50 rounded-xl" style="padding: 32px; background: var(--yellow-50); border-radius: 12px; border-left: 4px solid var(--yellow);">
+        <h3 class="mb-4">Ready to read?</h3>
+        <p class="mb-6">Click below to grab your copy on Amazon and start laughing.</p>
+        <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+          {{ with .Params.amazonKindle }}
+          <a href="{{ . }}" target="_blank" rel="noopener" class="btn btn-yellow">
+            Get on Amazon
+          </a>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- More Books -->
+  <section class="section" style="background: var(--gray-50);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">More Laughs</span>
+        <h2 class="section-title">Other Books You Might Like</h2>
+      </div>
+      
+      <div class="books-grid">
+        {{ $currentID := .File.UniqueID }}
+        {{ range first 3 (where .Site.RegularPages "Section" "books") }}
+          {{ if ne .File.UniqueID $currentID }}
+          <article class="book-card reveal">
+            <div class="book-card-cover">
+              <a href="{{ .Permalink }}">
+                <img src="{{ with .Params.coverImage }}{{ . }}{{ else }}https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=400&q=80{{ end }}" 
+                     alt="{{ .Title }}"
+                     loading="lazy">
+              </a>
+            </div>
+            <div class="book-card-body">
+              <h3 class="book-card-title">
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+              </h3>
+              <div class="book-card-meta">
+                <span class="book-card-price">$9.99</span>
+              </div>
+            </div>
+          </article>
+          {{ end }}
+        {{ end }}
+      </div>
+      
+      <div class="text-center mt-xl">
+        <a href="/books/" class="btn btn-outline">View All Books</a>
+      </div>
+    </div>
+  </section>
+</article>
+{{ end }}

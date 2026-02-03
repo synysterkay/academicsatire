@@ -1,0 +1,87 @@
+{{ define "main" }}
+<section class="search-page section">
+  <div class="container">
+    <div class="search-container">
+      <header class="search-header">
+        <h1>Search</h1>
+        <p class="text-secondary">Find books, blog posts, and more</p>
+      </header>
+      
+      <form class="search-form" role="search" onsubmit="return false;">
+        <span class="search-icon">🔍</span>
+        <input 
+          type="search" 
+          id="search-input" 
+          class="search-input" 
+          placeholder="Search for books, posts, topics..." 
+          aria-label="Search"
+          autocomplete="off"
+        >
+      </form>
+      
+      <div id="search-results" class="search-results"></div>
+      
+      <div class="search-suggestions" id="search-suggestions">
+        <h3>Popular Searches</h3>
+        <div class="suggestion-tags">
+          <a href="#" class="suggestion-tag" data-search="satire">Satire</a>
+          <a href="#" class="suggestion-tag" data-search="academia">Academia</a>
+          <a href="#" class="suggestion-tag" data-search="writing tips">Writing Tips</a>
+          <a href="#" class="suggestion-tag" data-search="KDP">KDP</a>
+          <a href="#" class="suggestion-tag" data-search="humor">Humor</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.search-suggestions {
+  margin-top: var(--space-12);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-border);
+}
+
+.search-suggestions h3 {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-4);
+}
+
+.suggestion-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.suggestion-tag {
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  transition: all var(--transition-fast);
+}
+
+.suggestion-tag:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Handle suggestion tags
+  document.querySelectorAll('.suggestion-tag').forEach(tag => {
+    tag.addEventListener('click', (e) => {
+      e.preventDefault();
+      const searchTerm = tag.dataset.search;
+      const searchInput = document.getElementById('search-input');
+      searchInput.value = searchTerm;
+      searchInput.dispatchEvent(new Event('input'));
+      searchInput.focus();
+    });
+  });
+});
+</script>
+{{ end }}

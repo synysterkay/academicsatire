@@ -1,0 +1,81 @@
+{{ define "main" }}
+<article class="single-post">
+  <!-- Post Header -->
+  <header class="post-header section pb-0 bg-yellow-50">
+    <div class="container container-narrow text-center">
+      <div class="mb-4">
+        {{ range .Params.categories }}
+        <a href="/categories/{{ . | urlize }}" class="badge badge-yellow mr-2">{{ . }}</a>
+        {{ end }}
+      </div>
+      
+      <h1 class="post-title hero-title mb-4">{{ .Title }}</h1>
+      
+      <div class="post-meta text-sm text-gray-500 mb-8">
+        <span>{{ .Date.Format "January 2, 2006" }}</span>
+        <span class="mx-2">•</span>
+        <span>{{ .ReadingTime }} min read</span>
+      </div>
+
+      {{ if .Params.coverImage }}
+      <div class="post-cover-image reveal rounded-xl overflow-hidden shadow-lg mt-8" style="margin-bottom: -60px;">
+        <img src="{{ .Params.coverImage }}" alt="{{ .Title }}" class="w-full">
+      </div>
+      {{ end }}
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <div class="section pt-3xl">
+    <div class="container container-narrow">
+      <div class="prose">
+        {{ .Content }}
+      </div>
+      
+      <!-- Author Bio / Bottom CTA -->
+      <div class="mt-3xl pt-xl border-t border-gray-200">
+        <div class="bg-yellow-50 p-8 rounded-xl flex flex-col md:flex-row items-center gap-8">
+          <div class="w-full md:w-1/3 text-center">
+             <!-- Placeholder for Author/Book Image - using a generic one or specific if available -->
+             <img src="/images/prof-headshot.jpg" onerror="this.src='https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400&q=80'" alt="Prof Y Not" class="rounded-full w-32 h-32 object-cover mx-auto border-4 border-white shadow-md">
+          </div>
+          <div class="w-full md:w-2/3 text-center md:text-left">
+            <h3 class="h4 mb-2">Enjoyed this post?</h3>
+            <p class="mb-4 text-sm">
+              I'm Prof Y Not, and when I'm not grading papers or crying in a broom closet, I write satire books about the absurdity of academia.
+            </p>
+            <a href="/books/" class="btn btn-yellow">Check Out My Books</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Related Posts -->
+      <div class="mt-3xl">
+         <h3 class="h4 mb-6 border-b border-gray-200 pb-2">Read Next</h3>
+         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+           {{ $related := .Site.RegularPages.Related . | first 2 }}
+           {{ with $related }}
+             {{ range . }}
+             <a href="{{ .Permalink }}" class="group block">
+               <h4 class="font-bold mb-2 group-hover:text-yellow-600 transition-colors">{{ .Title }}</h4>
+               <p class="text-sm text-gray-500">{{ .Summary | truncate 80 }}</p>
+             </a>
+             {{ end }}
+           {{ else }}
+             <!-- Fallback if no related content found -->
+             {{ range first 2 (where .Site.RegularPages "Section" "blog") }}
+              {{ if ne .Permalink $.Permalink }}
+               <a href="{{ .Permalink }}" class="group block">
+                 <h4 class="font-bold mb-2 group-hover:text-yellow-600 transition-colors">{{ .Title }}</h4>
+                 <p class="text-sm text-gray-500">{{ .Summary | truncate 80 }}</p>
+               </a>
+               {{ end }}
+             {{ end }}
+           {{ end }}
+         </div>
+      </div>
+
+    </div>
+  </div>
+</article>
+{{ end }}

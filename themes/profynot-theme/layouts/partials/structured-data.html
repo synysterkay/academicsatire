@@ -1,0 +1,173 @@
+<!-- Organization Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Prof Y Not",
+  "url": "{{ .Site.BaseURL }}",
+  "logo": "{{ .Site.BaseURL }}images/logo.png",
+  "description": "{{ .Site.Params.description }}",
+  "sameAs": [
+    {{ with .Site.Params.social.twitter }}"{{ . }}"{{ end }}
+    {{ with .Site.Params.social.instagram }}, "{{ . }}"{{ end }}
+    {{ with .Site.Params.social.goodreads }}, "{{ . }}"{{ end }}
+    {{ with .Site.Params.social.amazon }}, "{{ . }}"{{ end }}
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "url": "{{ .Site.BaseURL }}contact/"
+  }
+}
+</script>
+
+<!-- WebSite Schema with SearchAction -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ .Site.Title }}",
+  "url": "{{ .Site.BaseURL }}",
+  "description": "{{ .Site.Params.description }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Prof Y Not"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "{{ .Site.BaseURL }}search/?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<!-- Person Schema for Author -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Prof Y Not",
+  "url": "{{ .Site.BaseURL }}about/",
+  "image": "{{ .Site.BaseURL }}images/author-photo.jpg",
+  "jobTitle": "Author & Satirist",
+  "description": "Satirical comedy author known for sharp wit and academic humor",
+  "sameAs": [
+    {{ with .Site.Params.social.twitter }}"{{ . }}"{{ end }}
+    {{ with .Site.Params.social.amazon }}, "{{ . }}"{{ end }}
+  ]
+}
+</script>
+
+{{ if .IsPage }}
+  {{ if eq .Section "blog" }}
+  <!-- Article Schema for Blog Posts -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{{ .Title }}",
+    "description": "{{ .Description }}",
+    "image": "{{ with .Params.ogImage }}{{ . | absURL }}{{ else }}{{ .Site.Params.ogImage | absURL }}{{ end }}",
+    "author": {
+      "@type": "Person",
+      "name": "Prof Y Not",
+      "url": "{{ .Site.BaseURL }}about/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Prof Y Not",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ .Site.BaseURL }}images/logo.png"
+      }
+    },
+    "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+    "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ .Permalink }}"
+    },
+    "articleSection": "{{ with .Params.categories }}{{ index . 0 }}{{ end }}",
+    "keywords": "{{ delimit .Params.tags ", " }}"
+  }
+  </script>
+  {{ end }}
+  
+  {{ if eq .Section "books" }}
+  <!-- Book Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "{{ .Title }}",
+    "description": "{{ .Description }}",
+    "image": "{{ with .Params.coverImage }}{{ . | absURL }}{{ else }}{{ .Site.Params.ogImage | absURL }}{{ end }}",
+    "author": {
+      "@type": "Person",
+      "name": "Prof Y Not"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ with .Params.publisher }}{{ . }}{{ else }}Self-Published{{ end }}"
+    },
+    "isbn": "{{ .Params.isbn }}",
+    "numberOfPages": {{ with .Params.pages }}{{ . }}{{ else }}0{{ end }},
+    "genre": "{{ with .Params.genre }}{{ . }}{{ else }}Satire{{ end }}",
+    "inLanguage": "en",
+    "bookFormat": "https://schema.org/EBook",
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "price": "{{ .Params.price }}",
+      "priceCurrency": "USD",
+      "url": "{{ .Params.amazonKindle }}"
+    }
+    {{ with .Params.rating }},
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "{{ . }}",
+      "bestRating": "5",
+      "ratingCount": "{{ $.Params.ratingCount }}"
+    }
+    {{ end }}
+  }
+  </script>
+  {{ end }}
+{{ end }}
+
+<!-- BreadcrumbList Schema -->
+{{ if not .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ .Site.BaseURL }}"
+    }
+    {{ if .Section }}
+    ,{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ .Section | humanize | title }}",
+      "item": "{{ .Site.BaseURL }}{{ .Section }}/"
+    }
+    {{ end }}
+    {{ if .IsPage }}
+    ,{
+      "@type": "ListItem",
+      "position": {{ if .Section }}3{{ else }}2{{ end }},
+      "name": "{{ .Title }}",
+      "item": "{{ .Permalink }}"
+    }
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}

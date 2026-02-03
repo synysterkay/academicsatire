@@ -1,0 +1,66 @@
+{{- /* Pagination Partial */ -}}
+{{ $paginator := .Paginator }}
+
+{{ if gt $paginator.TotalPages 1 }}
+<nav class="pagination" aria-label="Pagination">
+  <div class="pagination-info">
+    Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}
+  </div>
+  
+  <div class="pagination-links">
+    {{ if $paginator.HasPrev }}
+    <a href="{{ $paginator.Prev.URL }}" class="pagination-link pagination-prev" aria-label="Previous page">
+      ← Previous
+    </a>
+    {{ else }}
+    <span class="pagination-link pagination-prev disabled">← Previous</span>
+    {{ end }}
+    
+    <div class="pagination-numbers">
+      {{ $adjacent := 2 }}
+      {{ $start := sub $paginator.PageNumber $adjacent }}
+      {{ $end := add $paginator.PageNumber $adjacent }}
+      
+      {{ if lt $start 1 }}
+        {{ $start = 1 }}
+      {{ end }}
+      
+      {{ if gt $end $paginator.TotalPages }}
+        {{ $end = $paginator.TotalPages }}
+      {{ end }}
+      
+      {{ if gt $start 1 }}
+      <a href="{{ $paginator.First.URL }}" class="pagination-number">1</a>
+      {{ if gt $start 2 }}
+      <span class="pagination-ellipsis">…</span>
+      {{ end }}
+      {{ end }}
+      
+      {{ range $paginator.Pagers }}
+        {{ if and (ge .PageNumber $start) (le .PageNumber $end) }}
+          {{ if eq . $paginator }}
+          <span class="pagination-number current" aria-current="page">{{ .PageNumber }}</span>
+          {{ else }}
+          <a href="{{ .URL }}" class="pagination-number">{{ .PageNumber }}</a>
+          {{ end }}
+        {{ end }}
+      {{ end }}
+      
+      {{ if lt $end $paginator.TotalPages }}
+      {{ if lt $end (sub $paginator.TotalPages 1) }}
+      <span class="pagination-ellipsis">…</span>
+      {{ end }}
+      <a href="{{ $paginator.Last.URL }}" class="pagination-number">{{ $paginator.TotalPages }}</a>
+      {{ end }}
+    </div>
+    
+    {{ if $paginator.HasNext }}
+    <a href="{{ $paginator.Next.URL }}" class="pagination-link pagination-next" aria-label="Next page">
+      Next →
+    </a>
+    {{ else }}
+    <span class="pagination-link pagination-next disabled">Next →</span>
+    {{ end }}
+  </div>
+</nav>
+{{ end }}

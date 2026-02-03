@@ -1,0 +1,32 @@
+# Theme Configuration
+name = "ProfYnot Theme"
+license = "MIT"
+licenselink = "https://github.com/profynot/profynot-theme/blob/main/LICENSE"
+description = "A modern, responsive Hugo theme for authors and content creators"
+
+[author]
+name = "Prof Y Not"
+homepage = "https://profynot.com"
+
+[original]
+name = "ProfYnot Theme"
+homepage = "https://profynot.com"
+repo = "https://github.com/profynot/profynot-theme"
+
+# Theme features
+[params]
+  features = [
+    "Dark Mode",
+    "Responsive Design",
+    "SEO Optimized",
+    "Schema.org Markup",
+    "Newsletter Integration",
+    "Social Sharing",
+    "Reading Progress",
+    "Search Functionality",
+    "Cookie Consent (GDPR)",
+    "Syntax Highlighting"
+  ]
+
+# Minimum Hugo version required
+min_version = "0.120.0"

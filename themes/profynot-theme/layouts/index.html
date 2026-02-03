@@ -1,0 +1,209 @@
+{{ define "main" }}
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <span class="hero-eyebrow">Satirical Comedy Author</span>
+        <h1 class="hero-title">Prof Y Not</h1>
+        <p class="hero-subtitle">
+          Where academia meets absurdity. Sharp satire for anyone who's survived 
+          faculty meetings, student excuses, and the eternal quest for parking.
+        </p>
+        <p class="hero-tagline">"I didn't choose the satire life—it chose me."</p>
+        <div class="hero-actions">
+          <a href="/books/" class="btn btn-yellow btn-lg">Explore Books</a>
+          <a href="#featured" class="btn btn-dark btn-lg">See Featured</a>
+        </div>
+      </div>
+      
+      <div class="hero-visual">
+        <div class="hero-book">
+          <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=500&q=80" 
+               alt="Prof or not, here I come! book cover" 
+               loading="eager">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Book -->
+<section class="section featured-section" id="featured">
+  <div class="container">
+    <div class="featured-grid">
+      <div class="featured-cover reveal-left">
+        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&q=80" 
+             alt="Prof or not, here I come! book cover"
+             loading="lazy">
+      </div>
+      
+      <div class="featured-content reveal-right">
+        <span class="featured-label">Featured Release</span>
+        <h2 class="featured-title">Prof or not, here I come!</h2>
+        <p class="featured-tagline">"Tenure is overrated. Comedy is forever."</p>
+        
+        <p class="featured-desc">
+          What happens when a professor decides tenure is overrated and comedy is the only 
+          syllabus worth following? Absolute chaos—and you're invited. This sharp, witty 
+          exploration of university life will have you snorting coffee through your nose.
+        </p>
+        
+        <div class="featured-actions">
+          <a href="https://www.amazon.com" class="btn btn-yellow btn-lg" target="_blank" rel="noopener">
+            Buy on Amazon
+          </a>
+          <a href="/books/prof-or-not-here-i-come/" class="btn btn-outline">
+            Learn More
+          </a>
+        </div>
+        
+        <div class="featured-quote">
+          <p>"The funniest book about academia I've ever read."</p>
+          <cite>— Verified Reader Review</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- All Books -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">The Collection</span>
+      <h2 class="section-title">Books by Prof Y Not</h2>
+      <p class="section-desc">Sharp wit, sharper satire. Pick your poison.</p>
+    </div>
+    
+    <div class="books-grid">
+      {{ range where .Site.RegularPages "Section" "books" | first 6 }}
+      <article class="book-card reveal">
+        <div class="book-card-cover">
+          <a href="{{ .Permalink }}">
+            <img src="{{ with .Params.coverImage }}{{ . }}{{ else }}https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=400&q=80{{ end }}" 
+                 alt="{{ .Title }}"
+                 loading="lazy">
+          </a>
+          <div class="book-card-overlay">
+            <div class="book-card-overlay-btns">
+              <a href="{{ .Params.amazonKindle }}" class="btn btn-yellow btn-sm" target="_blank" rel="noopener">
+                Buy Now
+              </a>
+              <a href="{{ .Permalink }}" class="btn btn-white btn-sm">
+                Details
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="book-card-body">
+          <h3 class="book-card-title">
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+          </h3>
+          <p class="book-card-tagline">{{ with .Params.tagline }}{{ . }}{{ else }}A satirical masterpiece{{ end }}</p>
+          <div class="book-card-meta">
+            <span class="book-card-rating">★ {{ with .Params.rating }}{{ . }}{{ else }}4.8{{ end }}</span>
+            <span class="book-card-price">${{ with .Params.kindlePrice }}{{ . }}{{ else }}9.99{{ end }}</span>
+          </div>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+    
+    <div class="text-center mt-3xl">
+      <a href="/books/" class="btn btn-outline">View All Books</a>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="section" style="background: var(--gray-50);">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image reveal-left">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" 
+             alt="Prof Y Not"
+             loading="lazy">
+      </div>
+      
+      <div class="about-content reveal-right">
+        <h2>Meet the Author</h2>
+        <p class="about-lead">
+          Former academic. Current satirist. Forever questioning why faculty meetings exist.
+        </p>
+        <p class="about-text">
+          After surviving years in the academic trenches—where "publish or perish" wasn't just 
+          advice but a genuine existential threat—I discovered that the best way to process 
+          the absurdity was to write about it. With satire.
+        </p>
+        <p class="about-text">
+          My books are for everyone who's ever wondered why professional development seminars 
+          exist, why parking is always a battlefield, and why "synergy" became a word we all 
+          pretend to understand.
+        </p>
+        <p class="about-signature">— Prof Y Not</p>
+        <a href="/about/" class="btn btn-outline">Read Full Bio</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Blog -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">From the Blog</span>
+      <h2 class="section-title">Latest Musings</h2>
+      <p class="section-desc">Satire tips, book recommendations, and academic absurdities.</p>
+    </div>
+    
+    <div class="blog-grid">
+      {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
+      <article class="blog-card reveal">
+        <a href="{{ .Permalink }}" class="blog-card-image">
+          <img src="{{ with .Params.ogImage }}{{ . }}{{ else }}https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&q=80{{ end }}" 
+               alt="{{ .Title }}"
+               loading="lazy">
+        </a>
+        <div class="blog-card-body">
+          {{ with .Params.categories }}
+          <span class="blog-card-category">{{ index . 0 }}</span>
+          {{ end }}
+          <h3 class="blog-card-title">
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+          </h3>
+          <p class="blog-card-excerpt">{{ .Summary | truncate 120 }}</p>
+          <div class="blog-card-footer">
+            <time class="blog-card-date" datetime="{{ .Date.Format "2006-01-02" }}">
+              {{ .Date.Format "Jan 2, 2006" }}
+            </time>
+            <a href="{{ .Permalink }}" class="blog-card-link">Read →</a>
+          </div>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+    
+    <div class="text-center mt-3xl">
+      <a href="/blog/" class="btn btn-outline">View All Posts</a>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section class="section newsletter-section">
+  <div class="container">
+    <div class="newsletter-inner">
+      <h2 class="newsletter-title">Join the Satire Squad</h2>
+      <p class="newsletter-desc">
+        Get exclusive humor, early book announcements, and the occasional rant about 
+        faculty parking—delivered to your inbox. No spam, just laughs.
+      </p>
+      <form class="newsletter-form" action="{{ .Site.Params.newsletterEndpoint }}" method="POST">
+        <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address">
+        <button type="submit" class="btn btn-accent">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+{{ end }}

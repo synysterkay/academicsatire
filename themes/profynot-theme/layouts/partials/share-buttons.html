@@ -1,0 +1,58 @@
+{{- /* Share Buttons Partial */ -}}
+{{ $title := .Title | urlize }}
+{{ $url := .Permalink }}
+{{ $description := .Description | default .Summary }}
+
+<div class="share-buttons">
+  <span class="share-label">Share:</span>
+  
+  <a href="https://twitter.com/intent/tweet?text={{ $title }}&url={{ $url }}" 
+     target="_blank" 
+     rel="noopener" 
+     class="share-btn share-twitter"
+     aria-label="Share on Twitter">
+    <span class="share-icon">𝕏</span>
+    <span class="share-text">Twitter</span>
+  </a>
+  
+  <a href="https://www.facebook.com/sharer/sharer.php?u={{ $url }}" 
+     target="_blank" 
+     rel="noopener" 
+     class="share-btn share-facebook"
+     aria-label="Share on Facebook">
+    <span class="share-icon">f</span>
+    <span class="share-text">Facebook</span>
+  </a>
+  
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ $url }}&title={{ $title }}" 
+     target="_blank" 
+     rel="noopener" 
+     class="share-btn share-linkedin"
+     aria-label="Share on LinkedIn">
+    <span class="share-icon">in</span>
+    <span class="share-text">LinkedIn</span>
+  </a>
+  
+  <a href="https://reddit.com/submit?url={{ $url }}&title={{ $title }}" 
+     target="_blank" 
+     rel="noopener" 
+     class="share-btn share-reddit"
+     aria-label="Share on Reddit">
+    <span class="share-icon">r/</span>
+    <span class="share-text">Reddit</span>
+  </a>
+  
+  <a href="mailto:?subject={{ $title }}&body=Check out this article: {{ $url }}" 
+     class="share-btn share-email"
+     aria-label="Share via Email">
+    <span class="share-icon">✉</span>
+    <span class="share-text">Email</span>
+  </a>
+  
+  <button class="share-btn share-copy" 
+          data-copy="{{ $url }}"
+          aria-label="Copy link">
+    <span class="share-icon">🔗</span>
+    <span class="share-text">Copy</span>
+  </button>
+</div>

@@ -1,0 +1,34 @@
+{{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  {{- range .Data.Pages }}
+  <url>
+    <loc>{{ .Permalink }}</loc>
+    {{- if not .Lastmod.IsZero }}
+    <lastmod>{{ .Lastmod.Format "2006-01-02" }}</lastmod>
+    {{- else }}
+    <lastmod>{{ .Date.Format "2006-01-02" }}</lastmod>
+    {{- end }}
+    {{- if eq .Section "books" }}
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    {{- else if eq .Section "blog" }}
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    {{- else if eq .Kind "home" }}
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    {{- else }}
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    {{- end }}
+    {{- with .Params.ogImage }}
+    <image:image>
+      <image:loc>{{ . | absURL }}</image:loc>
+      <image:title>{{ $.Title }}</image:title>
+    </image:image>
+    {{- end }}
+  </url>
+  {{- end }}
+</urlset>

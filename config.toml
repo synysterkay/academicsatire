@@ -1,0 +1,87 @@
+baseURL = "https://profynot.github.io/"
+languageCode = "en-us"
+title = "Prof Y Not | Satirical Comedy Books & Academic Humor"
+theme = "profynot-theme"
+enableRobotsTXT = true
+enableGitInfo = false
+
+[pagination]
+  pagerSize = 9
+
+[params]
+  description = "Discover hilarious satire books by Prof Y Not. Academic comedy, witty humor, and laugh-out-loud reads available on Amazon Kindle and paperback."
+  author = "Prof Y Not"
+  authorTagline = "Because Laughter is the Best Tenure"
+  logo = "/images/logo.png"
+  ogImage = "/images/og-default.jpg"
+  twitterHandle = "@ProfYNot"
+  amazonAuthorPage = "https://www.amazon.com/author/profynot"
+  newsletterEndpoint = "/api/newsletter"
+  googleAnalyticsID = "G-XXXXXXXXXX"
+  googleSiteVerification = "YOUR_GOOGLE_VERIFICATION_CODE"
+  bingSiteVerification = "YOUR_BING_VERIFICATION_CODE"
+
+[params.hero]
+  title = "Prof Y Not"
+  subtitle = "Satire So Sharp, It Deserves Tenure"
+  ctaPrimary = "Explore Books"
+  ctaSecondary = "Read the Blog"
+
+[params.social]
+  twitter = "https://twitter.com/ProfYNot"
+  instagram = "https://instagram.com/profynot"
+  goodreads = "https://goodreads.com/profynot"
+  amazon = "https://www.amazon.com/author/profynot"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Books"
+    url = "/books/"
+    weight = 2
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 3
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 4
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 5
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "monokai"
+
+[sitemap]
+  changefreq = "daily"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+[privacy]
+  [privacy.googleAnalytics]
+    anonymizeIP = true
+    respectDoNotTrack = true
+  [privacy.x]
+    enableDNT = true
+  [privacy.instagram]
+    simple = true
