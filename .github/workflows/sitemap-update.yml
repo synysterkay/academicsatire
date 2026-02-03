@@ -1,4 +1,4 @@
-# Prof Y Not - Sitemap Regeneration
+# Academic Satire - Sitemap Regeneration
 # Regenerates sitemap weekly and pings search engines
 
 name: Weekly Sitemap Update
@@ -35,12 +35,12 @@ jobs:
 
       - name: Ping Google
         run: |
-          curl -s "https://www.google.com/ping?sitemap=https://profynot.github.io/sitemap.xml"
+          curl -s "https://www.google.com/ping?sitemap=https://academicsatire.com/sitemap.xml"
           echo "Pinged Google"
 
       - name: Ping Bing
         run: |
-          curl -s "https://www.bing.com/ping?sitemap=https://profynot.github.io/sitemap.xml"
+          curl -s "https://www.bing.com/ping?sitemap=https://academicsatire.com/sitemap.xml"
           echo "Pinged Bing"
 
       - name: Log completion
