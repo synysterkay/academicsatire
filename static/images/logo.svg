@@ -1,21 +1,17 @@
-<svg width="400" height="100" viewBox="0 0 400 100" xmlns="http://www.w3.org/2000/svg">
-  <!-- Professional/Editorial Academic Satire Logo -->
+<svg width="320" height="50" viewBox="0 0 320 50" xmlns="http://www.w3.org/2000/svg">
+  <!-- Academic Satire Logo - Compact -->
   <style>
-    .brand-text { font-family: 'Playfair Display', serif; font-weight: 900; }
-    .small-text { font-family: 'Inter', sans-serif; font-weight: 400; letter-spacing: 0.3em; }
+    .brand-text { font-family: 'Playfair Display', Georgia, serif; font-weight: 900; }
   </style>
   
-  <!-- Icon: Minimalist Mortarboard + Quill -->
-  <g transform="translate(10, 20) scale(0.6)">
-    <path d="M0 40 L50 15 L100 40 L50 65 Z" fill="none" stroke="black" stroke-width="4" stroke-linejoin="round"/>
-    <path d="M25 52 V75 C25 80 75 80 75 75 V52" fill="none" stroke="black" stroke-width="4" stroke-linejoin="round"/>
-    <path d="M100 40 V65" fill="none" stroke="black" stroke-width="4" />
-    <circle cx="100" cy="65" r="4" fill="black" />
-    <!-- Quill stroke -->
-    <path d="M70 10 Q85 15 80 40" fill="none" stroke="black" stroke-width="3" stroke-linecap="round"/>
+  <!-- Icon: Minimalist Mortarboard -->
+  <g transform="translate(0, 5) scale(0.4)">
+    <path d="M0 40 L50 15 L100 40 L50 65 Z" fill="none" stroke="black" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M25 52 V72 C25 77 75 77 75 72 V52" fill="none" stroke="black" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M100 40 V60" fill="none" stroke="black" stroke-width="5" />
+    <circle cx="100" cy="62" r="5" fill="black" />
   </g>
 
   <!-- Text -->
-  <text x="85" y="45" class="small-text" font-size="14" fill="black">THE OFFICIAL HOME OF</text>
-  <text x="85" y="85" class="brand-text" font-size="44" fill="black">ACADEMIC SATIRE</text>
+  <text x="52" y="36" class="brand-text" font-size="32" fill="black">ACADEMIC SATIRE</text>
 </svg>

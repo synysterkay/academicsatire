@@ -43,7 +43,7 @@ Rights, licensing, bulk orders, and partnerships.
   <a href="https://twitter.com/ProfYNot" target="_blank" rel="noopener">Twitter/X</a>
   <a href="https://instagram.com/profynot" target="_blank" rel="noopener">Instagram</a>
   <a href="https://www.goodreads.com/profynot" target="_blank" rel="noopener">Goodreads</a>
-  <a href="https://www.amazon.com/author/profynot" target="_blank" rel="noopener">Amazon Author Page</a>
+  <a href="https://www.amazon.com/s?k=prof+y+not&crid=1OF6PSOV45XT&sprefix=prof+y+note%2Caps%2C524&ref=nb_sb_noss_1" target="_blank" rel="noopener">Amazon Author Page</a>
 </div>
 
 ## Response Time

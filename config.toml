@@ -15,7 +15,7 @@ enableGitInfo = false
   logo = "/images/logo.svg"
   ogImage = "/favicon.svg"
   twitterHandle = "@AcademicSatire"
-  amazonAuthorPage = "https://www.amazon.com/author/profynot"
+  amazonAuthorPage = "https://www.amazon.com/s?k=prof+y+not&crid=1OF6PSOV45XT&sprefix=prof+y+note%2Caps%2C524&ref=nb_sb_noss_1"
   newsletterEndpoint = "/api/newsletter"
   googleAnalyticsID = "G-XXXXXXXXXX"
   googleSiteVerification = "YOUR_GOOGLE_VERIFICATION_CODE"
@@ -31,7 +31,7 @@ enableGitInfo = false
   twitter = "https://twitter.com/ProfYNot"
   instagram = "https://instagram.com/profynot"
   goodreads = "https://goodreads.com/profynot"
-  amazon = "https://www.amazon.com/author/profynot"
+  amazon = "https://www.amazon.com/s?k=prof+y+not&crid=1OF6PSOV45XT&sprefix=prof+y+note%2Caps%2C524&ref=nb_sb_noss_1"
 
 [menu]
   [[menu.main]]

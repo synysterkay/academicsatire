@@ -1,0 +1,6 @@
+<svg width="180" height="40" viewBox="0 0 180 40" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .brand-text { font-family: 'Playfair Display', Georgia, serif; font-weight: 900; }
+  </style>
+  <text x="0" y="30" class="brand-text" font-size="28" fill="black">ACADEMIC SATIRE</text>
+</svg>
