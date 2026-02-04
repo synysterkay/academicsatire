@@ -18,6 +18,7 @@ amazonPaperback: "https://www.amazon.com/dp/B0GDVJMK4F"
 
 # Book Metadata
 pages: 150
+rating: 4.4
 genre: "Satire / Humor"
 ---
 

@@ -1,11 +1,11 @@
-<svg width="320" height="50" viewBox="0 0 320 50" xmlns="http://www.w3.org/2000/svg">
+<svg width="280" height="40" viewBox="0 0 280 40" xmlns="http://www.w3.org/2000/svg">
   <!-- Academic Satire Logo - Compact -->
   <style>
-    .brand-text { font-family: 'Playfair Display', Georgia, serif; font-weight: 900; }
+    .brand-text { font-family: 'Playfair Display', Georgia, serif; font-weight: 900; letter-spacing: 0.5px; }
   </style>
   
   <!-- Icon: Minimalist Mortarboard -->
-  <g transform="translate(0, 5) scale(0.4)">
+  <g transform="translate(2, 4) scale(0.32)">
     <path d="M0 40 L50 15 L100 40 L50 65 Z" fill="none" stroke="black" stroke-width="5" stroke-linejoin="round"/>
     <path d="M25 52 V72 C25 77 75 77 75 72 V52" fill="none" stroke="black" stroke-width="5" stroke-linejoin="round"/>
     <path d="M100 40 V60" fill="none" stroke="black" stroke-width="5" />
@@ -13,5 +13,5 @@
   </g>
 
   <!-- Text -->
-  <text x="52" y="36" class="brand-text" font-size="32" fill="black">ACADEMIC SATIRE</text>
+  <text x="42" y="28" class="brand-text" font-size="22" fill="black">ACADEMIC SATIRE</text>
 </svg>
