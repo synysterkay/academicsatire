@@ -123,6 +123,11 @@ p { margin-bottom: 1rem; }
   padding: 100px 0;
 }
 
+/* Books Archive - Account for fixed header */
+.books-archive {
+  padding-top: calc(var(--header-height) + 60px);
+}
+
 .text-center { text-align: center; }
 
 /* =================================================================
