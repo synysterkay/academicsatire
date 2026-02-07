@@ -2,6 +2,7 @@
 title: "Contact Academic Satire"
 description: "Get in touch with Academic Satire for speaking engagements, press inquiries, book clubs, or just to share your best faculty meeting horror story."
 layout: "contact"
+date: 2026-01-01
 ---
 
 # Get in Touch

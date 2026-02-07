@@ -2,6 +2,7 @@
 title: "About Academic Satire"
 description: "Meet the satirical comedy author behind Academic Satire, known for hilarious books about academic life, faculty meetings, and the absurdities of higher education."
 layout: "about"
+date: 2026-01-01
 ogImage: "https://m.media-amazon.com/images/I/91FHiKJgScL._SL1500_.jpg"
 ---
 
