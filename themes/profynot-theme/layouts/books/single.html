@@ -125,4 +125,46 @@
     </div>
   </section>
 </article>
+
+<!-- FAQ Schema for AEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is {{ .Title }} about?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ .Params.shortDescription }} It's a satirical comedy book by Prof Y Not, available on Amazon in Kindle and paperback formats."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I buy {{ .Title }}?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can buy {{ .Title }} on Amazon. The Kindle eBook is available for ${{ .Params.kindlePrice }} and the paperback for ${{ .Params.paperbackPrice }}. Visit {{ .Permalink }} for direct purchase links."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who wrote {{ .Title }}?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ .Title }} was written by Prof Y Not, the satirical comedy author behind Academic Satire. Prof Y Not writes parody self-help books that use humor to explore everyday absurdities."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is {{ .Title }} actual self-help advice?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. {{ .Title }} is a work of satire and comedy. The advice inside is intentionally absurd and designed to make you laugh, not to be taken seriously. It makes a great gift for anyone with a sense of humor."
+      }
+    }
+  ]
+}
+</script>
 {{ end }}
