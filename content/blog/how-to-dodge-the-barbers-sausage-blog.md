@@ -5,7 +5,7 @@ slug: "how-to-dodge-the-barbers-sausage-blog"
 categories: ["Satire"]
 tags: ["awkward", "humor", "books", "satire"]
 summary: "We explore the hilarious reality of Awkward Encounters and why HOW TO DODGE THE BARBER’S SAUSAGE WHILE GETTING A HAIRCUT is the manual you need right now."
-ogImage: "https://m.media-amazon.com/images/I/81aaZf3oKWL._SL1500_.jpg"
+ogImage: "https://m.media-amazon.com/images/I/81CINeHC8ZL._SY522_.jpg"
 ---
 
 Let's be honest. **Awkward Encounters** is something we all deal with, but rarely admit to. We live in a society that demands perfection, punctuality, and constant productivity. But what if we leaned into the chaos instead?
@@ -22,7 +22,7 @@ When life gets overwhelming, humor is our best defense mechanism. Laughing at ou
 
 That's the core philosophy behind my latest book, **[HOW TO DODGE THE BARBER’S SAUSAGE WHILE GETTING A HAIRCUT](/books/how-to-dodge-the-barbers-sausage/)**.
 
-![HOW TO DODGE THE BARBER’S SAUSAGE WHILE GETTING A HAIRCUT Book Cover](https://m.media-amazon.com/images/I/81aaZf3oKWL._SL1500_.jpg)
+![HOW TO DODGE THE BARBER'S SAUSAGE WHILE GETTING A HAIRCUT Book Cover](https://m.media-amazon.com/images/I/81CINeHC8ZL._SY522_.jpg)
 
 ## A Deep Dive into HOW TO DODGE THE BARBER’S SAUSAGE WHILE GETTING A HAIRCUT
 
@@ -44,8 +44,8 @@ Stop taking life so seriously. Grab a copy, pour a drink (or coffee), and enjoy 
 
 ### Get Your Copy Today
 
-**eBook:** [Available on Amazon](https://www.amazon.com/dp/B0FP8WBKQH)  
-**Paperback:** [Available on Amazon](https://www.amazon.com/dp/B0FP4R7MCZ)
+**eBook:** [Available on Amazon](https://www.amazon.com/Dodge-BarberS-Sausage-Getting-Haircut/dp/B0FLWMF8MS/)  
+**Paperback:** [Available on Amazon](https://www.amazon.com/Dodge-BarberS-Sausage-Getting-Haircut/dp/B0FLWMF8MS/)
 
 <div class="text-center mt-xl">
   <a href="/books/how-to-dodge-the-barbers-sausage/" class="btn btn-yellow btn-lg">Read More About This Book</a>

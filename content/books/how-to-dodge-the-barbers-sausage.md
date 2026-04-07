@@ -7,14 +7,14 @@ draft: false
 # Book Details
 tagline: "Emerging unscathed with a fresh cut and your dignity intact."
 shortDescription: "A wild ride through the treacherous world of barber chairs and rogue sausages. A tongue-in-cheek survival manual for awkward trims."
-coverImage: "https://m.media-amazon.com/images/I/81aaZf3oKWL._SL1500_.jpg"
-ogImage: "https://m.media-amazon.com/images/I/81aaZf3oKWL._SL1500_.jpg"
+coverImage: "https://m.media-amazon.com/images/I/81CINeHC8ZL._SY522_.jpg"
+ogImage: "https://m.media-amazon.com/images/I/81CINeHC8ZL._SY522_.jpg"
 
 # Pricing & Links
 kindlePrice: "9.99"
 paperbackPrice: "14.99"
-amazonKindle: "https://www.amazon.com/dp/B0FP8WBKQH"
-amazonPaperback: "https://www.amazon.com/dp/B0FP4R7MCZ"
+amazonKindle: "https://www.amazon.com/Dodge-BarberS-Sausage-Getting-Haircut/dp/B0FLWMF8MS/"
+amazonPaperback: "https://www.amazon.com/Dodge-BarberS-Sausage-Getting-Haircut/dp/B0FLWMF8MS/"
 
 # Book Metadata
 pages: 150
