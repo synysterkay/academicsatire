@@ -1,0 +1,221 @@
+# Academic Satire — Full Context for AI Systems
+
+> This is the extended version of llms.txt providing comprehensive information about Academic Satire, its books, author, and content for AI language models and search engines.
+
+## About Academic Satire
+
+Academic Satire is a satirical publishing brand created by Prof Y Not. The website (https://academicsatire.com) showcases a collection of humor and parody self-help books that tackle everyday absurdities — from academic burnout and procrastination to dating anxiety, financial struggles, and existential confusion.
+
+Every book is written as a tongue-in-cheek self-help guide. The humor is observational, relatable, and designed to make readers laugh at the universal human experience. The books are available worldwide on Amazon in Kindle eBook and paperback formats.
+
+### Author: Prof Y Not
+- Genre: Satire, Humor, Comedy, Parody Self-Help
+- Platform: Amazon Kindle Direct Publishing (KDP)
+- Website: https://academicsatire.com
+- Amazon: https://www.amazon.com/s?k=prof+y+not
+
+---
+
+## Complete Book Catalog
+
+### How To Be Broke With Confidence
+- **Tagline:** When the bank account is empty, confidence is the only currency left.
+- **Description:** Ever wondered how to stay broke forever—and somehow feel amazing about it? The ultimate satire self-help book for financial disasters. A hilarious look at modern financial struggles, overspending, and the art of being confidently broke.
+- **Genre:** Satire / Humor / Financial Comedy
+- **URL:** https://academicsatire.com/books/how-to-be-broke-with-confidence/
+- **Amazon:** https://www.amazon.com/dp/B0GDTXSTZM
+- **Rating:** 4.5/5
+
+### Why Do I Hate Everyone Before Coffee
+- **Tagline:** Coffee first. Humanity later.
+- **Description:** Do you hate everyone before coffee? You're not alone. A hilarious self-help satire that finally explains morning rage, caffeine dependency, and why mornings are humanity's greatest enemy.
+- **Genre:** Satire / Humor / Coffee & Morning Culture
+- **URL:** https://academicsatire.com/books/why-do-i-hate-everyone-before-coffee/
+- **Amazon:** https://www.amazon.com/dp/B0GF6F8B7W
+- **Rating:** 4.7/5
+
+### How To Fart And Blame It On Someone: A Gaslighting Guide
+- **Tagline:** Change the way you own the room… or clear it.
+- **Description:** Ever been caught in a suspiciously smelly situation? This groundbreaking guide teaches the ancient art of flatulent misdirection. A satirical masterpiece on social etiquette and plausible deniability.
+- **Genre:** Satire / Humor / Social Comedy
+- **URL:** https://academicsatire.com/books/how-to-fart-and-blame-it-on-someone/
+- **Amazon:** https://www.amazon.com/dp/B0FVX8NVVS
+- **Rating:** 4.9/5
+
+### How To Hold In Your Fart When Talking To Your Crush
+- **Tagline:** Love is in the air… and so is something else.
+- **Description:** A dating survival guide for the gassy romantic. What happens when your body betrays you at the worst possible moment? A laugh-out-loud look at dating anxiety and bodily functions.
+- **Genre:** Satire / Humor / Dating Comedy
+- **URL:** https://academicsatire.com/books/how-to-hold-in-your-fart-when-talking-to-your-crush/
+- **Rating:** 4.5/5
+
+### I'm Not Lazy I'm On Energy Saving Mode
+- **Tagline:** Efficiency isn't doing more. It's doing nothing—strategically.
+- **Description:** Rebranding laziness as a lifestyle choice and a power move. The definitive guide to doing absolutely nothing while feeling productive about it.
+- **Genre:** Satire / Humor / Productivity Parody
+- **URL:** https://academicsatire.com/books/im-not-lazy-im-on-energy-saving-mode/
+- **Rating:** 4.6/5
+
+### How To Be Productive Without Producing Anything
+- **Tagline:** Master the art of looking busy.
+- **Description:** A satirical deep dive into fake productivity, performative busyness, and the art of appearing to work while producing absolutely nothing of value.
+- **Genre:** Satire / Humor / Workplace Comedy
+- **URL:** https://academicsatire.com/books/how-to-be-productive-without-producing-anything/
+- **Rating:** 4.6/5
+
+### I Have No Idea What I Am Doing But It's Working
+- **Tagline:** Success: the world's most confusing accident.
+- **Description:** A celebration of accidental success, impostor syndrome, and stumbling your way through life. When you have no plan but somehow everything works out.
+- **Genre:** Satire / Humor / Imposter Syndrome Comedy
+- **URL:** https://academicsatire.com/books/i-have-no-idea-what-i-am-doing-but-its-working/
+- **Rating:** 4.8/5
+
+### Why Everyone Is Wrong Except Me: A Scientific Study
+- **Tagline:** Peer-reviewed by myself.
+- **Description:** A satirical scientific study in being insufferably right about everything. Why your opinions are facts and everyone else is clearly misinformed.
+- **Genre:** Satire / Humor / Ego Comedy
+- **URL:** https://academicsatire.com/books/why-everyone-is-wrong-except-me/
+- **Rating:** 4.4/5
+
+### How To Achieve Burnout Without Achieving Anything
+- **Tagline:** All the exhaustion, none of the results.
+- **Description:** A masterclass in being completely burnt out without having accomplished a single meaningful thing. Modern workplace culture satirized to perfection.
+- **Genre:** Satire / Humor / Burnout Comedy
+- **URL:** https://academicsatire.com/books/how-to-achieve-burnout-without-achieving-anything/
+- **Rating:** 4.7/5
+
+### Why Success Feels Illegal To Me
+- **Tagline:** Achievement unlocked: guilt.
+- **Description:** Exploring imposter syndrome through comedy. When you succeed but feel like the police are going to show up any minute. A hilarious take on self-doubt and accidental accomplishment.
+- **Genre:** Satire / Humor / Imposter Syndrome
+- **URL:** https://academicsatire.com/books/why-success-feels-illegal-to-me/
+- **Rating:** 4.6/5
+
+### How To Be Late Even When You Start Early
+- **Tagline:** Time is an illusion, and I'm proof.
+- **Description:** The paradox of chronic lateness explained through satire. How do you manage to be late every single time, even when you leave early?
+- **Genre:** Satire / Humor / Time Management Parody
+- **URL:** https://academicsatire.com/books/how-to-be-late-even-when-you-start-early/
+- **Rating:** 4.8/5
+
+### How To Ruin Your Life With One Bad Decision
+- **Tagline:** Choose wisely. Or don't.
+- **Description:** A cautionary comedy about catastrophic choices, terrible judgment calls, and the domino effect of one spectacularly bad decision.
+- **Genre:** Satire / Humor / Life Choices Comedy
+- **URL:** https://academicsatire.com/books/how-to-ruin-your-life-with-one-bad-decision/
+- **Rating:** 4.4/5
+
+### I Promise I'll Start Tomorrow, A Procrastinator's Notebook
+- **Tagline:** Tomorrow is the most productive day of the week.
+- **Description:** The procrastinator's eternal pledge. A tribute to everyone who keeps promising to start tomorrow but never does. Tomorrow is always one day away.
+- **Genre:** Satire / Humor / Procrastination Comedy
+- **URL:** https://academicsatire.com/books/i-promise-ill-start-tomorrow/
+- **Rating:** 4.3/5
+
+### How Can I Double My Body Fat And Give It To The Next Person
+- **Tagline:** Sharing is caring, especially when it comes to calories.
+- **Description:** Fitness satire at its finest. What if you could just transfer your body fat to someone else? A parody of diet culture and fitness obsession.
+- **Genre:** Satire / Humor / Fitness Parody
+- **URL:** https://academicsatire.com/books/how-can-i-double-my-body-fat-and-give-it-to-the-next-person/
+- **Rating:** 4.6/5
+
+### How Can You Face Your Problem When the Problem Is Your Face
+- **Tagline:** Sometimes the call is coming from inside the mirror.
+- **Description:** Brutal honesty meets comedy. When everyone says "face your problems" but the problem is literally staring back at you in the mirror.
+- **Genre:** Satire / Humor / Self-Image Comedy
+- **URL:** https://academicsatire.com/books/how-can-you-face-your-problem-when-the-problem-is-your-face/
+- **Rating:** 4.4/5
+
+### How To Be Exhausted By Decisions That Don't Matter
+- **Tagline:** Should I have oat milk or almond milk? *collapses*
+- **Description:** Decision fatigue as a lifestyle. A satirical look at being mentally destroyed by trivial choices that have zero impact on your life.
+- **Genre:** Satire / Humor / Decision Fatigue Comedy
+- **URL:** https://academicsatire.com/books/how-to-be-exhausted-by-decisions-that-dont-matter/
+- **Rating:** 4.3/5
+
+### How To Politely Tell Someone That You Don't Like Them
+- **Tagline:** It's not you, it's... actually, it is you.
+- **Description:** A guide to socially acceptable rejection. How to tell someone you can't stand them without technically being rude.
+- **Genre:** Satire / Humor / Social Etiquette
+- **URL:** https://academicsatire.com/books/how-to-politely-tell-someone-that-you-dont-like-them/
+- **Rating:** 4.7/5
+
+### Why Am I Tired After Doing Nothing All Day
+- **Tagline:** Resting is exhausting.
+- **Description:** The science of doing absolutely nothing and still being completely exhausted. A comedic exploration of mysterious fatigue.
+- **Genre:** Satire / Humor / Laziness Comedy
+- **URL:** https://academicsatire.com/books/why-am-i-tired-after-doing-nothing-all-day/
+- **Rating:** 4.5/5
+
+### How To Dodge The Barber's Sausage While Getting A Haircut
+- **Tagline:** Emerging unscathed with a fresh cut and your dignity intact.
+- **Description:** A wild ride through the treacherous world of barber chairs and rogue sausages. A tongue-in-cheek survival manual for awkward haircut encounters.
+- **Genre:** Satire / Humor / Awkward Encounters
+- **URL:** https://academicsatire.com/books/how-to-dodge-the-barbers-sausage/
+- **Amazon:** https://www.amazon.com/Dodge-BarberS-Sausage-Getting-Haircut/dp/B0FLWMF8MS/
+- **Rating:** 4.2/5
+
+### How To Let Bro Know That You Want To Be More Than Friends: 7 Ways to Turn Bromance into Romance
+- **Tagline:** Because 'no homo' can only carry you so far.
+- **Description:** The ultimate satirical guide to navigating the treacherous waters between bromance and romance. 7 hilariously terrible strategies that definitely won't backfire.
+- **Genre:** Satire / Humor / Relationship Comedy
+- **URL:** https://academicsatire.com/books/how-to-let-bro-know-that-you-want-to-be-more-than-friends/
+- **Amazon:** https://www.amazon.com/Know-That-Want-More-Friends-ebook/dp/B0FV3N782X/
+- **Rating:** 4.7/5
+
+### They Cannot Outsmart You If You Are Not Smart: 7 Ways to Stay Dumb
+- **Tagline:** Ignorance isn't just bliss—it's a competitive advantage.
+- **Description:** The definitive satirical guide to weaponizing stupidity. Why bother being smart when being dumb is so much easier and way more fun?
+- **Genre:** Satire / Humor / Anti-Intelligence Comedy
+- **URL:** https://academicsatire.com/books/they-cannot-outsmart-you-if-you-are-not-smart/
+- **Amazon:** https://www.amazon.com/They-Cannot-Outsmart-You-Smart-ebook/dp/B0FV38GF96/
+- **Rating:** 4.6/5
+
+### Will My Boyfriend Still Love Me Even If I'm A Worm? And Other Ways to Prove His Loyalty
+- **Tagline:** If he won't love you as a worm, he doesn't deserve you as a human.
+- **Description:** The ultimate satirical relationship loyalty test. Would he still love you if you were a worm? A slug? A sentient houseplant? Time to find out.
+- **Genre:** Satire / Humor / Relationship Comedy
+- **URL:** https://academicsatire.com/books/will-my-boyfriend-still-love-me-even-if-im-a-worm/
+- **Amazon:** https://www.amazon.com/Will-Boyfriend-Still-Love-Even-ebook/dp/B0FN5XYZWT/
+- **Rating:** 4.8/5
+
+### How To Make Your Cat Pay Your Bills: Shocking Tips The IRS Doesn't Want You To Know
+- **Tagline:** Your cat has been freeloading long enough. Time to monetize the meow.
+- **Description:** The definitive satirical guide to feline financial responsibility. Shocking tips the IRS doesn't want you to know about turning your cat into a breadwinner.
+- **Genre:** Satire / Humor / Pet & Finance Comedy
+- **URL:** https://academicsatire.com/books/how-to-make-your-cat-pay-your-bills/
+- **Amazon:** https://www.amazon.com/How-Make-Your-Cat-Bills-ebook/dp/B0FLVSDGKZ/
+- **Rating:** 4.5/5
+
+---
+
+## Frequently Asked Questions
+
+### What is Academic Satire?
+Academic Satire is a humor publishing brand by author Prof Y Not, featuring satirical self-help books about everyday life absurdities. All books are available on Amazon.
+
+### Who is Prof Y Not?
+Prof Y Not is a satirical comedy author who writes parody self-help books. The name is a play on "Professor, why not?" — embracing the absurd.
+
+### What genre are these books?
+Satire, humor, and comedy. Specifically, they are parody self-help guides that use exaggeration and irony to comment on modern life.
+
+### Where can I buy these books?
+All books are available on Amazon worldwide in Kindle eBook and paperback formats. Visit https://academicsatire.com/books/ for the full catalog with direct links.
+
+### Are these books actual self-help?
+No. These are works of satire and comedy. The "advice" is intentionally absurd and meant to entertain, not instruct. They make great gifts for friends with a sense of humor.
+
+### How many books has Academic Satire published?
+As of April 2026, there are 24 published titles in the catalog, with more on the way.
+
+---
+
+## Blog Topics
+
+Academic Satire's blog covers:
+- The craft of writing satire and humor
+- Marketing humor books on Amazon KDP
+- Academic life absurdities and faculty culture
+- Behind-the-scenes looks at the writing process
+- Self-publishing tips for comedy authors
